@@ -1,35 +1,47 @@
+import React from "react";
 import Head from "../components/head";
-import ExampleForm from "../components/example-form";
-import CardLayout from "../components/home/content-card";
-import ModalRegister from "../components/home/modal-register";
-import ModalDownload from "../components/home/modal-download";
-import ModalLogin from "../components/home/modal-login";
-import FooterLayout from "../components/home/footer";
-import styles from '../styles.module.css'
+import Content from "../components/pages/home/content";
+import ModalRegister from "../components/pages/home/modal-register";
+import ModalDownload from "../components/pages/home/modal-download";
+import ModalLogin from "../components/pages/home/modal-login";
+import Footer from "../components/footer";
+import styles from "../styles.module.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
-
 const Home = () => {
-  return (
-    <div >
-      <Head title="Project Soluna" />
-      <ExampleForm />
-      {/* <ModalLogin /> */}
-      {/* <div>
-        <button onClick={downloadButton}>DOWNLOAD</button>
-      </div> */}
-      <button>DOWNLOAD</button>
-      {/* <div className={styles.modalDL}>        
-        <ModalDownload />
-      </div> */}
+  const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
+  const [ModalLoginShow, SetModalLoginShow] = React.useState(false);
+  const [ModalRegisterShow, SetModalRegisterShow] = React.useState(false);
 
-      {/* <ModalRegister /> */}
-      <div className={styles.cardItem}> 
-        <CardLayout />
-      </div>     
-      <div className={styles.footer}>
-        <FooterLayout />
+  return (
+    <div>
+      <button onClick={() => SetModalDownloadShow(true)}>Download</button>
+      <button onClick={() => SetModalLoginShow(true)}>Login</button>
+      <button onClick={() => SetModalRegisterShow(true)}>Register</button>
+
+      <Head title="Project Soluna" />
+      <div className={styles.content}>
+        <Content />
       </div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
+
+      <ModalDownload
+        centered
+        show={ModalDownloadShow}
+        onHide={() => SetModalDownloadShow(false)}
+      />
+      <ModalRegister
+        centered
+        show={ModalRegisterShow}
+        onHide={() => SetModalRegisterShow(false)}
+      />
+      <ModalLogin
+        centered
+        show={ModalLoginShow}
+        onHide={() => SetModalLoginShow(false)}
+      />
     </div>
   );
 };
@@ -37,14 +49,12 @@ const Home = () => {
 //const downloadButton = () => {
 //  <ModalDownload />
 // alert("You clicked");
- // return(
-    
- //   <div className={styles.modalDL}>
- //     <ModalDownload />
- //   </div>
- // );
+// return(
+
+//   <div className={styles.modalDL}>
+//     <ModalDownload />
+//   </div>
+// );
 //}
 
 export default Home;
-
-
