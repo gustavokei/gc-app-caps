@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Card } from "react-bootstrap";
 import { checkAuth } from "./controllers/controller";
 import { GlobalContext } from "./models/global-provider";
 
