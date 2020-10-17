@@ -1,0 +1,52 @@
+.customContainer {
+  @media (min-width: 992px) {
+    padding: 20px 0;
+  }
+  padding: 40px 0;
+}
+
+.customRow {
+  margin: 0;
+  justify-content: center;
+}
+
+.customCol {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+  flex-direction: column;
+}
+
+.middleText {
+  text-align: center;
+  padding: 30px;
+  @media (min-width: 992px) {
+    padding: 30px 0;
+  }
+}
+
+.social {
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+  display: flex;
+  flex-direction: column;
+  a {
+    color: white;
+    opacity: 0.5;
+    margin: 15px 0;
+    @media (min-width: 992px) {
+      width: 30px;
+      margin: 0 20px;
+    }
+    width: 80px;
+    transition: 0.3s all;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
