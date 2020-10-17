@@ -1,25 +1,29 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
+import styles from "./modal.module.scss";
 
 const ModalDownload = (props) => {
   return (
+
     <Modal {...props} size="md">
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Download</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Files:</h4>
-        <ul>
-          <li>
-            <a href="#" target="_blank">
-              Launcher
-            </a>
-          </li>
-        </ul>
-        <hr />
-        <h4>aaaa</h4>
-      </Modal.Body>
+      <div className={styles.custModal}>
+        <Modal.Header className={styles.custModalClose} closeButton>
+          <Modal.Title>Download</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <h6>Please, download the installer and follow the instructions:</h6>
+            <h6 className={styles.custModalLink}>
+              <a href="#" target="_blank">
+                Installer
+              </a>
+            </h6>
+        </Modal.Body>
+        <Modal.Footer className={styles.custModalFooter}>
+          <Button variant="primary">Close</Button>
+        </Modal.Footer>
+      </div>
     </Modal>
+
   );
 };
 
