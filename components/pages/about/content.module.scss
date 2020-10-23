@@ -1,0 +1,213 @@
+.customContainer {
+    padding: 40px 0;
+    background-color: #242424;
+}
+  
+.customRow {
+    margin: 0;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.customCol {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        margin-bottom: 25px;
+        color: #fff;
+      
+        img {
+          @media (min-width: 992px) {
+            transform: scale(1);
+          }
+          transform: scale(0.5);
+        }
+      
+        .titleText {
+          @media (min-width: 992px) {
+            font-size: 2.5rem;
+            margin: 0 10px;
+          }
+          font-size: 2rem;
+          font-family: "Oswald", sans-serif;
+        }
+    }
+
+    .customMainVideoTitle{
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        @media only screen and (min-width: 992px) {
+            text-align: left;
+            transform: translateX(-24%);
+            font-size: 1.75rem;
+        }
+    }
+    
+    .customShare{
+        opacity: .8;
+
+        .customShareIcon {
+            transform: translateX(100%);
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+        
+        @media only screen and (min-width: 992px) {
+            display: flex;
+            justify-content: flex-start;
+            transform: translateX(55%);
+            font-size: 1.2rem;
+        }
+
+    }
+}
+
+.customMainVideoGroup {
+    position: relative;
+    display: flex;
+    margin: auto;
+    left: 7px;
+    transform: translateX(6%);
+
+    .customPrevNextBtn {
+        font-size: 42px;
+        transform: translateY(180%);
+    }
+    
+    .customMainIframe {
+        width: 235px;
+        height: 195px;
+        border: none;
+    }
+
+    @media only screen and (min-width: 992px) {
+        display: flex;
+        margin: auto;
+        transform: translateX(10%);
+
+        .customMainIframe {
+            top: 0;
+            left: 166px;
+            bottom: 0;
+            right: 0;
+            width: 778px;
+            height: 440px;
+            border: none;
+        }
+
+        .customPrevNextBtn {
+            font-size: 60px;
+            transform: translateY(300%);
+        }
+
+    }
+
+}
+
+.customRowVideo {
+    text-align: center;
+}
+.customColumnVideo {
+    /* reset the text-align */
+    text-align: left;
+}
+  @media (min-width: 768px) {
+    .customColumnVideo{
+      display: inline-block;
+      float: none;
+      /* inline-block space fix */
+      margin-right: -4px;
+      vertical-align: middle;
+    }
+  }
+
+.customVideo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 75%;
+}
+
+.customIframe {
+    position: absolute;
+    top: 0;
+    left: 166px;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 55%;
+    border: none;
+}
+
+.customShareBottom {
+    display: none;
+    @media (max-width: 768px) {
+        display: inline-flex;
+        opacity: .65;
+        transform: translateX(200%);
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: 20px;
+    }
+}
+
+.customVideoContainer{
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    .customVideoColumn{
+        margin: 16px;
+        position: relative;
+        bottom: 0;
+        padding: 5px;
+    
+        img{
+            width: 240px;
+            height: 135px;
+        };
+
+        img:hover {
+            box-shadow: 0 0 5px 3px rgba(2, 141, 187, 0.5);
+        }
+
+        .bottomVideoTitleBar {         
+            width: 100%;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.8); 
+            transform: translateY(-100%);
+
+            span {
+                font-family: Roboto, sans-serif;
+                font-size: 12px;
+                padding: 10px;           
+            }
+        }
+    }
+}
+
+.customVideoTitle{
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #fff;
+    width: 240px;
+    height: 30px;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+}
+
