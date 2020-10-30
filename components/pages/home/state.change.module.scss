@@ -97,3 +97,47 @@
     align-items: center;
     flex-direction: column;
   }
+
+
+
+
+  .wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    height: 60px; 
+    border: 1px solid black;
+}
+
+#slide {
+    position: absolute;
+    left: -100px;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    transition: 1s;
+}
+
+.wrapper:hover #slide {
+    transition: 1s;
+    left: 0;
+}
+
+.jsclick {
+  background: none;
+}
+
+.jsclick:active {
+      background-color: orange;
+
+      .wrapper:hover #slide {
+        transition: 1s;
+        left: 0;
+    }
+  }
+
+
+.jsclick:focus ~ .wrapper:hover #slide {
+      transition: 1s;
+      left: 0;
+  }

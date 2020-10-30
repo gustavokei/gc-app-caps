@@ -9,7 +9,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 const ExampleStateChange = () => {
   const [character, setCharacter] = React.useState(1);
-  const [charName, setName] = React.useState(1);  
+  
 
   const changeCharacter = (param) => {
 
@@ -18,22 +18,7 @@ const ExampleStateChange = () => {
     
   };
 
-  const changeName = (param) => {
 
-
-  switch(param){
-    case '1':
-      setName("ABC");
-      break;
-    case '2':
-      setName("DEF");  
-      break;
-    case '3':
-      setName("GHI"); 
-      break;
-  }
-
-};
 
   const prevCharacter = () => {
     if(character>1){
@@ -79,27 +64,46 @@ const ExampleStateChange = () => {
  <img  className ={styles.btnimg} src={"characters/ch1.png"} onClick={() => changeCharacter(1) }></img>
 
 
-
-
  <img  className ={styles.btnimg} src={"characters/ch2.png"} onClick={() => changeCharacter(2) }></img>
 
 
-
-
  <img  className ={styles.btnimg} src={"characters/ch3.png"} onClick={() => changeCharacter(3)}></img>
+
+ <img  className ={styles.btnimg} src={"characters/ch1.png"} onClick={() => changeCharacter(1) }></img>
+
+
+<img  className ={styles.btnimg} src={"characters/ch2.png"} onClick={() => changeCharacter(2) }></img>
+
+
+<img  className ={styles.btnimg} src={"characters/ch3.png"} onClick={() => changeCharacter(3)}></img>
+
+<img  className ={styles.btnimg} src={"characters/ch1.png"} onClick={() => changeCharacter(3)}></img>
 
 
  <img   src={"characters/arrow-right-solid.png"} onClick={() => nextCharacter()}></img>
 
  </div>
 
+ <div id ={styles.wrapper} className ={styles.wrapper}>
+ <img  id={styles.slide} className ={styles.btnimg} src={"characters/ch3.png"} onClick={() => abc()}></img>
+
+</div>
+<button className ={styles.jsclick} >Click me!</button>
+
+
 </Container>
+
+
 
  
      </div>
+     
+
       </div>
-      <div className={styles.bottomLine}></div>
+    
     </div>
+
+    
     
    
 
