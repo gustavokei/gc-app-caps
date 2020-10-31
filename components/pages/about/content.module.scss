@@ -36,38 +36,7 @@
           font-family: "Oswald", sans-serif;
         }
     }
-
-    .customMainVideoTitle{
-        @media (max-width: 768px) {
-            display: none;
-        }
-
-        @media only screen and (min-width: 992px) {
-            text-align: left;
-            transform: translateX(-24%);
-            font-size: 1.75rem;
-        }
-    }
     
-    .customShare{
-        opacity: .8;
-
-        .customShareIcon {
-            transform: translateX(100%);
-        }
-
-        @media (max-width: 768px) {
-            display: none;
-        }
-        
-        @media only screen and (min-width: 992px) {
-            display: flex;
-            justify-content: flex-start;
-            transform: translateX(55%);
-            font-size: 1.2rem;
-        }
-
-    }
 }
 
 .customMainVideoGroup {
@@ -75,11 +44,47 @@
     display: flex;
     margin: auto;
     left: 7px;
-    transform: translateX(6%);
+    transform: translateX(4.5%);
 
-    .customPrevNextBtn {
+    .customBackBtn {
+        position: relative;
+        display : block;
+        margin-right: 5px;
         font-size: 42px;
         transform: translateY(180%);
+        color: grey;     
+    }
+
+    .customPrevBtn  {
+        position: absolute;
+        margin-right: 5px;
+        font-size: 42px;
+        transform: translateY(80%);
+        color: white;
+        :hover {
+            color: #007bff;
+        }
+    }
+
+    .customForwardBtn {
+        position: relative;
+        display : block;
+        margin-left: 5px;
+        font-size: 42px;
+        transform: translateY(180%);
+        color: grey;     
+    }
+
+    .customNextBtn  {
+        position: absolute;
+        margin-left: 5px;
+        font-size: 42px;
+        transform: translateY(80%);
+        color: white;
+
+        :hover {
+            color: #007bff;
+        }
     }
     
     .customMainIframe {
@@ -91,7 +96,7 @@
     @media only screen and (min-width: 992px) {
         display: flex;
         margin: auto;
-        transform: translateX(10%);
+        transform: translateX(9%);
 
         .customMainIframe {
             top: 0;
@@ -103,60 +108,40 @@
             border: none;
         }
 
-        .customPrevNextBtn {
+        .customBackBtn {
+            position: relative;
+            display : block;
+            margin-right: 10px;
             font-size: 60px;
-            transform: translateY(300%);
+            transform: translateY(350%);
+            color: grey;    
+        }
+
+        .customPrevBtn {
+            position: absolute;
+            margin-right: 10px;
+            font-size: 60px;
+            transform: translateY(250%);
+        }
+
+        .customForwardBtn {
+            position: relative;
+            display : block;
+            margin-left: 10px;
+            font-size: 60px;
+            transform: translateY(350%);
+            color: grey;     
+        }
+
+        .customNextBtn {
+            position: absolute;
+            margin-left: 10px;
+            font-size: 60px;
+            transform: translateY(250%);
         }
 
     }
 
-}
-
-.customRowVideo {
-    text-align: center;
-}
-.customColumnVideo {
-    /* reset the text-align */
-    text-align: left;
-}
-  @media (min-width: 768px) {
-    .customColumnVideo{
-      display: inline-block;
-      float: none;
-      /* inline-block space fix */
-      margin-right: -4px;
-      vertical-align: middle;
-    }
-  }
-
-.customVideo {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-top: 75%;
-}
-
-.customIframe {
-    position: absolute;
-    top: 0;
-    left: 166px;
-    bottom: 0;
-    right: 0;
-    width: 70%;
-    height: 55%;
-    border: none;
-}
-
-.customShareBottom {
-    display: none;
-    @media (max-width: 768px) {
-        display: inline-flex;
-        opacity: .65;
-        transform: translateX(200%);
-        margin-bottom: 0;
-        padding-bottom: 0;
-        margin-top: 20px;
-    }
 }
 
 .customVideoContainer{
@@ -197,17 +182,3 @@
         }
     }
 }
-
-.customVideoTitle{
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #fff;
-    width: 240px;
-    height: 30px;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-}
-

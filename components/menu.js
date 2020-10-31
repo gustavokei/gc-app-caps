@@ -11,8 +11,13 @@ const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Project Soluna</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <img
+        className="menu-logo"
+        src="logo.svg"
+        width="183px"
+        height="30px"
+      />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/home">Home</Nav.Link>
