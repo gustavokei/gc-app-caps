@@ -1,0 +1,87 @@
+.wrapper {
+  background: url("/characters/background.jpg");
+  background-size: cover;
+  position: relative;
+  height: 700px;
+  color: white;
+  overflow: hidden;
+}
+
+.customContainer,
+.customRow,
+.customCol {
+  height: 100%;
+}
+.customCol {
+  position: relative;
+}
+
+.char {
+  z-index: 2;
+  position: absolute;
+  left: 21px;
+  top: 111px;
+  .title {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: 48px;
+  }
+
+  .listgroup {
+    width: 154px;
+    height: 146px;
+    color: #212529;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.desc {
+  z-index: 2;
+  display: block;
+  width: 522px;
+  height: 166px;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 59px;
+  span {
+    overflow-y: scroll;
+    display: block;
+    width: 438px;
+    height: 83px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 15px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+}
+
+.charimg {
+  position: absolute;
+  right: -100px;
+  top: 0;
+  pointer-events: none;
+  height: 700px;
+  z-index: 1;
+}
