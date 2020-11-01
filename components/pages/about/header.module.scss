@@ -1,0 +1,79 @@
+.customHeader {
+    position: relative;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+}
+  
+.customBackgroundImg {
+    width: 100%;
+    height: auto !important;
+    display: block;
+    max-height: 404px;
+    position: absolute;
+    bottom: 0;
+
+    @media (max-width: 992px) {
+       // overflow: hidden;
+        left: 50%;
+        top: 50%;
+        height: auto;
+        width: auto;
+        transform: translate(-50%, -50%);
+        filter: blur(0px);
+    }
+}
+
+.customCharacterImg {
+    width:100%;
+    height: 25%;
+    transform: translate(-150%, 0%) scale(1);
+
+
+    @media only screen and (min-width: 992px) {
+        height: 404px;
+        transform: translateX(-20%);
+    }
+}
+
+.customGCLogo {
+    position: relative;
+    width: 239px;
+    height: 126px;
+    transform: translate(-55%, 15%);
+ 
+    @media (min-width: 992px) {
+        width: 375px;
+        height: 198px;
+        margin-top: 35px;
+        transform: translateX(12%);
+    }
+}
+
+.customHeaderCaption {
+    position: absolute;
+    font-size: 2rem;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    width: 288px;
+    height: 94px;
+    transform: translate(-55%, 90%);  
+    text-shadow: 1px 1px 6px #000;
+
+    @media (min-width: 992px) {
+        font-size: 2.25rem;
+        margin: 0 10px;
+        width: 324px;
+        height: 107px;
+        transform: translateX(60px);
+    }
+
+}
+
+.bottomLine {
+    width: 100%;
+    height: 4px;
+    background: #007bff;
+    display: block;
+    z-index: 99;
+  }
+  

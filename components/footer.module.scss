@@ -29,11 +29,17 @@
 }
 
 .social {
+
   @media (min-width: 992px) {
     flex-direction: row;
+    font-size: 32px;
   }
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  font-size: 42px;
+  transform: translateX(10%);
+
   a {
     color: white;
     opacity: 0.5;
