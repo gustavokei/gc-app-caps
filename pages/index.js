@@ -9,7 +9,7 @@ import styles from "../styles.module.css";
 const Home = () => {
   return (
     <div>
-      <Head title="Project Soluna" />
+      <Head title="Project Soluna - Home" />
       <Menu />
       <Slider />
       <div className={styles.content}>

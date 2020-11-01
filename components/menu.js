@@ -3,6 +3,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import ModalDownload from "../components/pages/home/modal-download";
 import ModalLogin from "../components/pages/home/modal-login";
 import ModalRegister from "../components/pages/home/modal-register";
+import Link from "./custom-link";
 
 const Menu = () => {
   const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
@@ -15,21 +16,21 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-            <NavDropdown title="Characters" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Character 1
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
-                Character 2
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">
-                Character 3
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Item>
+              <Link href="/">
+                <a className="nav-link">Home</a>
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link href="/about">
+                <a className="nav-link">About</a>
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link href="/characters">
+                <a className="nav-link">Characters</a>
+              </Link>
+            </Nav.Item>
             <NavDropdown title="Ranking" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Highest EXP
