@@ -4,6 +4,7 @@ import ModalDownload from "../components/pages/home/modal-download";
 import ModalLogin from "../components/pages/home/modal-login";
 import ModalRegister from "../components/pages/home/modal-register";
 import Link from "./custom-link";
+import styles from "../styles.module.css";
 
 const Menu = () => {
   const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
@@ -13,10 +14,8 @@ const Menu = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <img
-        className="menu-logo"
+        className={styles.menuLogo}
         src="logo.svg"
-        width="183px"
-        height="30px"
       />
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

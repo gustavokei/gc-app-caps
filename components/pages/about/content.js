@@ -20,7 +20,6 @@ const VideoContent = () => {
     setVideo(param);
   };
 
-
   return (
     <Container className={styles.customContainer}>
       <Row className={styles.customRow}>
@@ -88,6 +87,6 @@ const VideoContent = () => {
     </Container>
   );
 
-  };
+};
 
 export default VideoContent;

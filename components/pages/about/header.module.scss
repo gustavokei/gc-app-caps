@@ -1,37 +1,20 @@
 .customHeader {
+    background: url("/about/background.jpg");
+    background-size: cover;
+    height: 408px;
     position: relative;
-    color: #fff;
+    color: white;
     font-family: "Oswald", sans-serif;
-}
-  
-.customBackgroundImg {
-    width: 100%;
-    height: auto !important;
-    display: block;
-    max-height: 404px;
-    position: absolute;
-    bottom: 0;
-
-    @media (max-width: 992px) {
-       // overflow: hidden;
-        left: 50%;
-        top: 50%;
-        height: auto;
-        width: auto;
-        transform: translate(-50%, -50%);
-        filter: blur(0px);
-    }
+    overflow: hidden;
 }
 
 .customCharacterImg {
-    width:100%;
-    height: 25%;
-    transform: translate(-150%, 0%) scale(1);
-
+    width: auto;
+    transform: translate(-110%, 10%) scale(.85);
 
     @media only screen and (min-width: 992px) {
-        height: 404px;
-        transform: translateX(-20%);
+        width:100%;
+        transform: translate(-10%, 1%);
     }
 }
 
@@ -66,7 +49,6 @@
         height: 107px;
         transform: translateX(60px);
     }
-
 }
 
 .bottomLine {

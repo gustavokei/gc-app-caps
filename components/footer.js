@@ -14,15 +14,15 @@ const Footer = () => {
     <Container className={styles.customContainer}>
       <Row className={styles.customRow}>
         <Col className={styles.customCol}>
-          <img
-            className="footer-logo"
-            src="logo.svg"
-            width="183px"
-            height="30px"
-          />
-
+          <div className={styles.footerLogo}>
+            <img        
+              src="logo.svg"
+              width="183px"
+              height="30px"
+            />
+          </div>
           <span className={styles.middleText}>
-            Grand Chase &copy; is a registered trademark of KOG Co Ltd
+            Grand Chase &copy; is a <br className={styles.break}/>registered trademark of KOG Co Ltd.
           </span>
 
           <div className={styles.social}>
