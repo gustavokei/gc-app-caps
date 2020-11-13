@@ -16,3 +16,26 @@
   background-color: #373a3c;
   color: #fff;
 }
+
+/* Edit Character Page */
+.editCharPageTitle {
+  margin: 15px 0;
+  font-size: 1.95rem;
+  text-align: center;
+  justify-content: center;
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 32px;
+  width: auto;
+  height: 43px;
+  background-color: #242424;
+  color: #fff;
+}
+@media only screen and (min-width: 992px) {
+  .editCharPageTitle {
+    display: none;
+  }
+}
+.editCharCustom{
+  background-color: #242424;
+}
+
