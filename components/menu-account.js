@@ -7,11 +7,8 @@ const AccountMenu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <img
-        className={styles.menuLogo}
-        src="logo.svg"
-      />
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <img className={styles.menuLogo} src="logo.svg" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Item>
@@ -25,27 +22,21 @@ const AccountMenu = () => {
               </Link>
             </Nav.Item>
             <Nav.Item>
-              <Link href="/editCharacters">
+              <Link href="/editchar">
                 <a className="nav-link">Edit Characters</a>
               </Link>
             </Nav.Item>
             <NavDropdown title="Item" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#item/">
-                Items
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#item/">Items</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#itemn/1">Item 1</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
             <NavDropdown title="your@email.com" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#logout/">
-                Logout
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#logout/">Logout</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#settings/1">
-                Settings
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#settings/1">Settings</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

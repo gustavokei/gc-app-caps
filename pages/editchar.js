@@ -3,7 +3,7 @@ import Head from "../components/head";
 import AccountMenu from "../components/menu-account";
 import CharSelector from "../components/pages/characters/char-selector";
 import MobCharSelector from "../components/pages/characters/mob-char-selector";
-import EditCharactersContent from "../components/pages/editCharacters/content.js"
+import EditCharactersContent from "../components/pages/editchar/content.js";
 import Footer from "../components/footer";
 import styles from "../styles.module.css";
 import { createMedia } from "@artsy/fresnel";
@@ -20,7 +20,7 @@ const EditCharacter = () => {
     <div className={styles.editCharCustom}>
       <Head title="Project Soluna" />
       <AccountMenu />
-      <div >
+      <div>
         <h1 className={styles.editCharPageTitle}>Edit Characters</h1>
       </div>
       <MediaContextProvider>
