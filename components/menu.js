@@ -36,7 +36,7 @@ const Menu = () => {
               </Link>
             </Nav.Item>
             <NavDropdown title="Ranking" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="rankexp">
                 Highest EXP
               </NavDropdown.Item>
               <NavDropdown.Divider />
