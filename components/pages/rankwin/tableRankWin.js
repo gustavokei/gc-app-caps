@@ -27,7 +27,7 @@ const TableWin = () => {
 
   // Get Character data from API
   const url =
-    process.env.NEXT_PUBLIC_API + "rank/win" + chartypeData[state.char].ctype;
+    process.env.NEXT_PUBLIC_API + "rank/win/" + chartypeData[state.char].ctype;
 
   const [data, setData] = useState([]);
 
