@@ -40,7 +40,7 @@ const Menu = () => {
                 Highest EXP
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Best PVP</NavDropdown.Item>
+              <NavDropdown.Item href="rankwin">Best PVP</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
