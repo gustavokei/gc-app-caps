@@ -87,10 +87,10 @@ const FormEditCharacter = () => {
       );
     },
     validationSchema: yup.object({
-      Level: yup.number().min(0).max(90).required(),
-      Promotion: yup.number().min(0).max(3).required(),
-      Win: yup.number().min(0).required(),
-      Lose: yup.number().min(0).required(),
+      Level: yup.number().integer().min(0).max(90).required(),
+      Promotion: yup.number().integer().min(0).max(3).required(),
+      Win: yup.number().integer().min(0).required(),
+      Lose: yup.number().integer().min(0).required(),
     }),
     initialValues: {
       Level: 0,
