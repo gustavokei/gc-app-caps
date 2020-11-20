@@ -26,16 +26,17 @@ const TableWin = () => {
   let count = 1;
 
   // Get Character data from API
-  const url = 'http://localhost:4000/api/rank/win/' + chartypeData[state.char].ctype;
+  const url =
+    process.env.NEXT_PUBLIC_API + "rank/win" + chartypeData[state.char].ctype;
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then(json => setData(json.data))
-  }, [data])
+    axios.get(url).then((json) => setData(json.data));
+  }, [data]);
 
   const renderTable = () => {
-    return data.map(Character => {
+    return data.map((Character) => {
       return (
         <tr className={styles.customTable}>
           <td>{count++}</td>
@@ -43,9 +44,9 @@ const TableWin = () => {
           <td>{chartypeData[state.char].name}</td>
           <td>{Character.Win}</td>
         </tr>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <div>
@@ -61,7 +62,7 @@ const TableWin = () => {
         <tbody>{renderTable()}</tbody>
       </Table>
     </div>
-  )
-}
+  );
+};
 
 export default TableWin;
