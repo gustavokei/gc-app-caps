@@ -1,0 +1,44 @@
+.customContainer {
+  padding: 40px 0;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 992px) {
+    height: calc(100vh - 170px);
+  }
+}
+
+.customRow {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.customRowValues {
+  margin: 0;
+  justify-content: center;
+  color: #212529;
+}
+
+.customCol {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleText {
+  display: flex;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-family: "SF Pro Text", sans-serif;
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.customBar {
+  background-color: #373A3C;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: .88rem;
+}
