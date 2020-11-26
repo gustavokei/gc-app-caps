@@ -17,8 +17,8 @@ const Menu = () => {
 
 
       let tokenAut = localStorage.getItem('token');
-
-      function aut(){
+      
+  
       axios.post('http://localhost:4000/api' + "/verify", {
           token: tokenAut
       })
@@ -39,10 +39,13 @@ const Menu = () => {
       },
       err => {
         
-      });
-    }
+      })
+    
+    
 
-  aut();
+    
+
+    
    
 
 

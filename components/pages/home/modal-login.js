@@ -53,6 +53,8 @@ function ModalLogin(props) {
  //  alert(JSON.stringify(localStorage.getItem('token'), null, 2));
    setErr("Correct Credentials");
    isAuth(auth+1);
+   window.open("/");
+   window.close();
 
     }else {
       console.log(result);
@@ -61,7 +63,7 @@ function ModalLogin(props) {
       console.log(auth);
       resetForm();
       return isAuth(false);
-  
+      
      
         }})
   
@@ -77,7 +79,7 @@ function ModalLogin(props) {
       handleSubmit,
       isSubmitting,
     }) => (
-    <Modal {...props} size="md">
+    <Modal {...props}  size="md">
       <div className={styles.custModal}>
         <Modal.Header className={styles.custModalClose} closeButton>
           <Modal.Title>Login</Modal.Title>
