@@ -28,6 +28,13 @@ const Head = (props) => (
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossOrigin="anonymous"
     />
+    <script
+      src={
+        "https://www.paypal.com/sdk/js?client-id=" +
+        process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID +
+        "&currency=BRL"
+      }
+    ></script>
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ""} />
     <meta
