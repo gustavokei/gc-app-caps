@@ -16,3 +16,21 @@
 .custModalFooter{
     justify-content: left !important;
 }
+
+
+  .formValid {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #4caf50;
+
+  }
+  .formInvalid {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #f44336;
+  }
+
+  .haserror {
+    border: 1px solid #f44336;
+  }
+

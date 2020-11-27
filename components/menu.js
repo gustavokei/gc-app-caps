@@ -1,15 +1,50 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import ModalDownload from "../components/pages/home/modal-download";
 import ModalLogin from "../components/pages/home/modal-login";
+import ModalLogout from "../components/pages/home/modal-logout";
 import ModalRegister from "../components/pages/home/modal-register";
 import Link from "./custom-link";
+import axios from 'axios';
 import styles from "../styles.module.css";
 
 const Menu = () => {
   const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
   const [ModalLoginShow, SetModalLoginShow] = React.useState(false);
   const [ModalRegisterShow, SetModalRegisterShow] = React.useState(false);
+  const [ModalLogoutShow, SetModalLogoutShow] = React.useState(false);
+  const [auth, isAuth] = React.useState(false);
+
+  useEffect(() => {
+
+
+
+      let tokenAut = localStorage.getItem('token');
+      
+  
+      axios.post(process.env.NEXT_PUBLIC_API + "verify", {
+          token: tokenAut
+      })
+      .then((response) => {
+
+        console.log(response.data.message);
+        if(response.data.message === "Successful Login..."){
+        isAuth(true);
+        console.log(auth);
+        }
+        else{
+          isAuth(false);
+          console.log(auth);
+        }
+   
+      },
+      err => {
+        console.log(err);
+      })   
+      
+  });
+
+  
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -44,13 +79,27 @@ const Menu = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link onClick={() => SetModalDownloadShow(true)}>
-              Download
-            </Nav.Link>
-            <Nav.Link onClick={() => SetModalLoginShow(true)}>Login</Nav.Link>
-            <Nav.Link onClick={() => SetModalRegisterShow(true)}>
+          {  (!auth) ?       <Nav.Link onClick={() => SetModalDownloadShow(true)}>  Download
+            </Nav.Link> : <Nav.Link onClick={() => SetModalDownloadShow(true)}>
+            </Nav.Link>}
+             
+            
+            {  (!auth) ?        <Nav.Link onClick={() => SetModalRegisterShow(true)}>
               Register
             </Nav.Link>
+            : 
+            <Nav.Link onClick={() => SetModalDownloadShow(true)}>
+            </Nav.Link>}
+
+            {  (!auth) ?       <Nav.Link onClick={() => SetModalLoginShow(true)}>
+              Login
+              </Nav.Link> : 
+              <Nav><NavDropdown title="zaman@conestogac.on.ca" id="collasible-nav-dropdown">
+              <NavDropdown.Item onClick={() => SetModalLogoutShow(true)}>Logout</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#settings/1">Settings</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -68,9 +117,14 @@ const Menu = () => {
         centered
         show={ModalLoginShow}
         onHide={() => SetModalLoginShow(false)}
-      />
+      /> 
+      <ModalLogout
+        centered
+        show={ModalLogoutShow}
+        onHide={() => SetModalLogoutShow(false)}
+      /> 
     </div>
-  );
+  )
 };
 
 export default Menu;
