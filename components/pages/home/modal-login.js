@@ -36,7 +36,7 @@ function ModalLogin(props) {
       setSubmitting(true);
 
       setTimeout(() => {
-          fetch("http://localhost:4000/api" + "/auth", {
+          fetch(process.env.NEXT_PUBLIC_API + "auth", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({

@@ -7,7 +7,7 @@ function ModalRegister(props) {
 let register = async(log, emal, pass) => {
 
 
-  return fetch("http://localhost:4000/api" + "/register", {
+  return fetch(process.env.NEXT_PUBLIC_API + "register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

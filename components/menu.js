@@ -22,7 +22,7 @@ const Menu = () => {
       let tokenAut = localStorage.getItem('token');
       
   
-      axios.post('http://localhost:4000/api' + "/verify", {
+      axios.post(process.env.NEXT_PUBLIC_API + "verify", {
           token: tokenAut
       })
       .then((response) => {
