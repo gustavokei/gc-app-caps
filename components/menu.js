@@ -6,6 +6,7 @@ import ModalLogout from "../components/pages/home/modal-logout";
 import ModalRegister from "../components/pages/home/modal-register";
 import Link from "./custom-link";
 import axios from 'axios';
+import styles from "../styles.module.css";
 
 const Menu = () => {
   const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
@@ -47,8 +48,11 @@ const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Project Soluna</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <img
+        className={styles.menuLogo}
+        src="logo.svg"
+      />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Item>
@@ -67,11 +71,11 @@ const Menu = () => {
               </Link>
             </Nav.Item>
             <NavDropdown title="Ranking" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="rankexp">
                 Highest EXP
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Best PVP</NavDropdown.Item>
+              <NavDropdown.Item href="rankwin">Best PVP</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

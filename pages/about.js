@@ -1,19 +1,19 @@
 import React from "react";
 import Head from "../components/head";
 import Menu from "../components/menu";
-import Slider from "../components/pages/home/slider";
-import Content from "../components/pages/home/content";
 import Footer from "../components/footer";
 import styles from "../styles.module.css";
+import AboutHeader from "../components/pages/about/header.js"
+import VideoContent from "../components/pages/about/content.js"
 
-const Home = () => {
+const About = () => {
   return (
     <div>
-      <Head title="Project Soluna - Home" />
+      <Head title="Project Soluna" />
       <Menu />
-      <Slider />
+      <AboutHeader />
       <div className={styles.content}>
-        <Content />
+        <VideoContent />
       </div>
       <div className={styles.footer}>
         <Footer />
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;
