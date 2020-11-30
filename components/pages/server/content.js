@@ -11,26 +11,20 @@ const Content = () => {
 
   useEffect(() => {
     axios.get(url).then((json) => setData(json.data));
-  }, [data]);
+  }, []);
 
   const serverValue = () => {
     return data.map((Server) => {
       return (
-        <Card border="secondary" style={{ width: "18rem" }}>
+        <Card key={Server.ServerName} border="secondary" style={{ width: "18rem" }}>
           <Card.Header>{Server.ServerName}</Card.Header>
           <Card.Body>
             <Card.Text>
-              <p>
-                IP: {Server.ServerIP}
-                <br />
-                Port: {Server.ServerPort}
-              </p>
-              <br />
-              <p>
-                Capacity: <br />
-                <ProgressBar className={styles.customBar} now={Server.UserNum} min={0} max={100} label={`${Server.UserNum}%`} />
-              </p>
+              IP: {Server.ServerIP} <br/>
+              Port: {Server.ServerPort} <br/> <br/> <br/>
+              Capacity:
             </Card.Text>
+            <ProgressBar className={styles.customBar} now={Server.UserNum} min={0} max={100} label={`${Server.UserNum}%`} />
           </Card.Body>
         </Card>
       );
