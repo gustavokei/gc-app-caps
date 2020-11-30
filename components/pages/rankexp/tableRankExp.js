@@ -32,13 +32,13 @@ const FormEditCharacter = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then((json) => setData(json.data));
-  }, [data]);
+    axios.get(url).then(json => setData(json.data))
+  }, [state.char])
 
   const renderTable = () => {
     return data.map((Character) => {
       return (
-        <tr className={styles.customTable}>
+        <tr key={count} className={styles.customTable}>
           <td>{count++}</td>
           <td>{Character.Login}</td>
           <td>{chartypeData[state.char].name}</td>
