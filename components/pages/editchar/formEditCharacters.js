@@ -87,10 +87,10 @@ const FormEditCharacter = () => {
       );
     },
     validationSchema: yup.object({
-      Level: yup.number().min(0).max(90).required(),
-      Promotion: yup.number().min(0).max(3).required(),
-      Win: yup.number().required(),
-      Lose: yup.number().required(),
+      Level: yup.number().integer().min(0).max(90).required(),
+      Promotion: yup.number().integer().min(0).max(3).required(),
+      Win: yup.number().integer().min(0).required(),
+      Lose: yup.number().integer().min(0).required(),
     }),
     initialValues: {
       Level: 0,
@@ -259,7 +259,7 @@ const FormEditCharacter = () => {
         />
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
-          Win must be a number
+          Win must be a positive number
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group>
@@ -274,7 +274,7 @@ const FormEditCharacter = () => {
         />
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
-          Lose must be a number
+          Lose must be a positive number
         </Form.Control.Feedback>
       </Form.Group>
       <Button type="submit">Save</Button>

@@ -6,9 +6,7 @@
   margin: 0;
   justify-content: center;
   align-items: center;
-  @media (min-width: 992px) {
-    min-height: calc(100vh - 354px);
-  }
+  min-height: calc(100vh - 254px);
 }
 
 .customCol {

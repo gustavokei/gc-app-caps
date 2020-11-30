@@ -26,16 +26,17 @@ const FormEditCharacter = () => {
   let count = 1;
 
   // Get Character data from API
-  const url = 'http://localhost:4000/api/rank/exp/' + chartypeData[state.char].ctype;
+  const url =
+    process.env.NEXT_PUBLIC_API + "rank/exp/" + chartypeData[state.char].ctype;
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     axios.get(url).then(json => setData(json.data))
   }, [state.char])
 
   const renderTable = () => {
-    return data.map(Character => {
+    return data.map((Character) => {
       return (
         <tr key={count} className={styles.customTable}>
           <td>{count++}</td>
@@ -43,9 +44,9 @@ const FormEditCharacter = () => {
           <td>{chartypeData[state.char].name}</td>
           <td>{Character.ExpS4}</td>
         </tr>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <div>
@@ -61,7 +62,7 @@ const FormEditCharacter = () => {
         <tbody>{renderTable()}</tbody>
       </Table>
     </div>
-  )
-}
+  );
+};
 
 export default FormEditCharacter;
