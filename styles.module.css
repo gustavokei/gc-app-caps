@@ -17,6 +17,18 @@
   color: #fff;
 }
 
+.ItemsPageTitle {
+  margin-top: 50px;
+  font-size: 1.95rem;
+  text-align: center;
+  justify-content: center;
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 32px;
+  width: auto;
+  background-color: #242424;
+  color: #fff;
+}
+
 /* Edit Character Page */
 .editCharPageTitle {
   margin: 15px 0;
@@ -35,7 +47,7 @@
     display: none;
   }
 }
-.editCharCustom{
+.editCharCustom {
   background-color: #242424;
 }
 
@@ -48,4 +60,3 @@
 .rankwinCustom {
   background-color: #242424;
 }
-

@@ -1,17 +1,17 @@
 import React from "react";
 import Head from "../components/head";
-import AccountMenu from "../components/menu-account";
-import Content from "../components/pages/additem/content.js";
+import Menu from "../components/menu-account";
+import Content from "../components/pages/edititem/content";
 import Footer from "../components/footer";
 import styles from "../styles.module.css";
 
-const AddItem = () => {
+const EditItems = () => {
   return (
-    <div className={styles.editCharCustom}>
-      <Head title="Project Soluna" />
-      <AccountMenu />
+    <div className={styles.rankexpCustom}>
+      <Head title="Project Soluna - Edit Items" />
+      <Menu />
       <div>
-        <h1 className={styles.ItemsPageTitle}>Add Items</h1>
+        <h1 className={styles.ItemsPageTitle}>Edit Items</h1>
       </div>
       <div className={styles.content}>
         <Content />
@@ -23,4 +23,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default EditItems;
