@@ -1,0 +1,20 @@
+.customContainer {
+  padding: 40px 0;
+}
+
+.customRow {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 472px);
+  @media (min-width: 992px) {
+    min-height: calc(100vh - 254px);
+  }
+}
+
+.customCol {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
