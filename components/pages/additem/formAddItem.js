@@ -21,7 +21,9 @@ const FormAddItem = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        return data;
+        if (data == "Error! Invalid ItemId") {
+          alert(data);
+        } else alert("Item '" + Object.values(data[0]) + "' was added!");
       });
   };
 
@@ -62,8 +64,8 @@ const FormAddItem = () => {
           ItemId must be a positive number
         </Form.Control.Feedback>
       </Form.Group>
-      <Button type="submit">Save</Button>
-      {formik.isSubmitting ? <p className="mt-4">Item added!</p> : <p></p>}
+      <Button type="submit">Add Item</Button>
+      {/* {formik.isSubmitting ? <p className="mt-4">Item added!</p> : <p></p>} */}
     </Form>
   );
 };
