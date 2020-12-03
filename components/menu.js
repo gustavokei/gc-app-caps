@@ -61,7 +61,7 @@ const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <img className={styles.menuLogo} src="logo.svg" />
+        <img className={styles.menuLogo} src="logo.svg" alt="logoimg3" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

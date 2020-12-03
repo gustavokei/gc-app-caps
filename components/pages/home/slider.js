@@ -10,7 +10,8 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider1.jpg"
-            alt="First slide"
+            alt="slider1"
+            longdesc="slider.html"
           />
           <Carousel.Caption className={styles.customCaption}>
             <h3>First slide label</h3>
@@ -21,7 +22,8 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider2.jpg"
-            alt="Third slide"
+            alt="slider2"
+            longdesc="slider.html"
           />
 
           <Carousel.Caption className={styles.customCaption}>
@@ -33,7 +35,8 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider3.jpg"
-            alt="Third slide"
+            alt="slider3"
+            longdesc="slider.html"
           />
 
           <Carousel.Caption className={styles.customCaption}>

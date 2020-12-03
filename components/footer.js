@@ -5,7 +5,7 @@ import {
   faDiscord,
   faFacebookSquare,
   faInstagramSquare,
-  faYoutubeSquare,
+  faYoutubeSquare
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./footer.module.scss";
 
@@ -15,14 +15,11 @@ const Footer = () => {
       <Row className={styles.customRow}>
         <Col className={styles.customCol}>
           <div className={styles.footerLogo}>
-            <img        
-              src="logo.svg"
-              width="183px"
-              height="30px"
-            />
+            <img alt="logoimg" src="logo.svg" width="183px" height="30px" />
           </div>
           <span className={styles.middleText}>
-            Grand Chase &copy; is a <br className={styles.break}/>registered trademark of KOG Co Ltd.
+            Grand Chase &copy; is a <br className={styles.break} />
+            registered trademark of KOG Co Ltd.
           </span>
 
           <div className={styles.social}>
