@@ -58,7 +58,7 @@ const AccountMenu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <img className={styles.menuLogo} src="logo.svg" />
+        <img className={styles.menuLogo} alt="logoimg2" src="logo.svg" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
