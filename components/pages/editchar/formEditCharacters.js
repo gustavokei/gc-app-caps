@@ -200,11 +200,7 @@ const FormEditCharacter = () => {
     <Form id="editCharForm" noValidate onSubmit={formik.handleSubmit}>
       <Form.Group controlId="char">
         <Form.Label>Character</Form.Label>
-        <Form.Control
-          type="text"
-          value={charData[state.char].jobs[0]}
-          disabled
-        />
+        <Form.Control type="text" value={charData[state.char].name} disabled />
       </Form.Group>
       <Form.Group>
         <Form.Label>Level</Form.Label>
