@@ -12,12 +12,13 @@ export default function ReactPayPal() {
   React.useEffect(() => {
     let paypalScript = document.getElementById("paypal-script");
 
-    new Promise((resolve) => {
+    new Promise(resolve => {
       if (paypalScript) {
         resolve(true);
       } else {
         const target = document.body;
         const tag = document.createElement("script");
+        setUser(localStorage.getItem("userName"));
         tag.async = false;
         tag.id = "paypal-script";
         tag.src =
@@ -26,7 +27,7 @@ export default function ReactPayPal() {
           "&currency=BRL";
         target.appendChild(tag);
         tag.addEventListener("load", resolve, {
-          once: true,
+          once: true
         });
       }
     }).then(() => {
@@ -41,10 +42,10 @@ export default function ReactPayPal() {
                   description: "Your description",
                   amount: {
                     currency_code: "BRL",
-                    value: 10.0,
-                  },
-                },
-              ],
+                    value: 10.0
+                  }
+                }
+              ]
             });
           },
           onApprove: async (data, actions) => {
@@ -52,10 +53,10 @@ export default function ReactPayPal() {
             setPaid(true);
             console.log(order);
           },
-          onError: (err) => {
+          onError: err => {
             //   setError(err),
             console.error(err);
-          },
+          }
         })
         .render(paypalRef.current);
     });
