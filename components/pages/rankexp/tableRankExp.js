@@ -1,26 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { GlobalContext } from "../../models/global-provider";
+import chartypeData from "../characters/char-selector-data";
 import styles from "./content.module.scss";
 import axios from "axios";
 
 const FormEditCharacter = () => {
   // Global context for char-selector component
   let { state } = useContext(GlobalContext);
-  let chartypeData = [
-    {
-      name: "Elesis Sieghart",
-      jobs: ["Knight", "Spearman", "Sword Master", "Savior"],
-      desc: "First character",
-      ctype: 0,
-    },
-    {
-      name: "Lire Eryuell",
-      jobs: ["Archer", "Crossbowman", "Arch Ranger", "Nova"],
-      desc: "Second character",
-      ctype: 1,
-    },
-  ];
 
   // Set initial value for character count
   let count = 1;

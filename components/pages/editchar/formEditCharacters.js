@@ -1,24 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { GlobalContext } from "../../models/global-provider";
+import charData from "../characters/char-selector-data";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 const FormEditCharacter = () => {
   // Global context for char-selector component
   let { state } = useContext(GlobalContext);
-  let charData = [
-    {
-      name: "Elesis Sieghart",
-      jobs: ["Knight", "Spearman", "Sword Master", "Savior"],
-      desc: "First character",
-    },
-    {
-      name: "Lire Eryuell",
-      jobs: ["Archer", "Crossbowman", "Arch Ranger", "Nova"],
-      desc: "Second character",
-    },
-  ];
 
   // Set default values
   const initialValue = {
