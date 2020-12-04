@@ -22,10 +22,10 @@ const Menu = () => {
 
     axios
       .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut
+        token: tokenAut,
       })
       .then(
-        response => {
+        (response) => {
           console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -38,15 +38,15 @@ const Menu = () => {
 
             axios
               .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name
+                Login: response.data.verifiedJwt.body.name,
               })
               .then(
-                response => {
+                (response) => {
                   console.log(response.data);
 
                   setName(response.data);
                 },
-                err => {
+                (err) => {
                   console.log(err);
                 }
               );
@@ -57,7 +57,7 @@ const Menu = () => {
             console.log(auth);
           }
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );
@@ -94,11 +94,10 @@ const Menu = () => {
           <Nav>
             {!auth ? (
               <Nav.Link onClick={() => SetModalDownloadShow(true)}>
-                {" "}
                 Download
               </Nav.Link>
             ) : (
-              <Nav.Link onClick={() => SetModalDownloadShow(true)}></Nav.Link>
+              <span></span>
             )}
 
             {!auth ? (
@@ -106,7 +105,7 @@ const Menu = () => {
                 Register
               </Nav.Link>
             ) : (
-              <Nav.Link onClick={() => SetModalDownloadShow(true)}></Nav.Link>
+              <span></span>
             )}
 
             {!auth ? (
