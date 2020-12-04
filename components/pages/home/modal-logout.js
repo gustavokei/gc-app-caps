@@ -1,25 +1,28 @@
-import React, {useState} from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import styles from "./modal.module.scss";
-import props from 'prop-types';
+import Router from "next/router";
 
 const ModalLogout = (props) => {
-
-  const close = () => {localStorage.clear();window.open("/");
-  window.close();}
+  const close = () => {
+    Router.push("/");
+    localStorage.clear();
+    props.onHide();
+  };
 
   return (
-    <Modal {...props} setShow={true} size="md">
+    <Modal {...props} size="md">
       <div className={styles.custModal}>
         <Modal.Header className={styles.custModalClose} closeButton>
           <Modal.Title>Logout</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h6>Are You Sure You Want To Logout ?</h6>
+          <h6>Are you sure you want to logout?</h6>
           <h6 className={styles.custModalLink}>
-          
-          <Button type="submit" onClick={close}>Submit</Button>
-          {/* <Button type="submit" >Submit</Button> */}
+            <Button type="submit" onClick={close}>
+              Yes
+            </Button>
+            {/* <Button type="submit" >Submit</Button> */}
           </h6>
         </Modal.Body>
       </div>

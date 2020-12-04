@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Link from "./custom-link";
-import styles from "../styles.module.css";
+import styles from "../pages/styles.module.scss";
 import ModalLogout from "../components/pages/home/modal-logout";
 import ModalLoggedout from "../components/pages/home/modal-logged-out";
 import axios from "axios";

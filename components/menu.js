@@ -6,16 +6,16 @@ import ModalLogout from "../components/pages/home/modal-logout";
 import ModalRegister from "../components/pages/home/modal-register";
 import Link from "./custom-link";
 import axios from "axios";
-import styles from "../styles.module.css";
+import styles from "../pages/styles.module.scss";
 
 const Menu = () => {
-  const [ModalDownloadShow, SetModalDownloadShow] = React.useState(false);
-  const [ModalLoginShow, SetModalLoginShow] = React.useState(false);
-  const [ModalRegisterShow, SetModalRegisterShow] = React.useState(false);
-  const [ModalLogoutShow, SetModalLogoutShow] = React.useState(false);
-  const [auth, isAuth] = React.useState(false);
-  const [name, setName] = React.useState("");
-  const [usrname, setUsrName] = React.useState("");
+  const [ModalDownloadShow, SetModalDownloadShow] = useState(false);
+  const [ModalLoginShow, SetModalLoginShow] = useState(false);
+  const [ModalRegisterShow, SetModalRegisterShow] = useState(false);
+  const [ModalLogoutShow, SetModalLogoutShow] = useState(false);
+  const [auth, isAuth] = useState(false);
+  const [name, setName] = useState("");
+  const [usrname, setUsrName] = useState("");
 
   useEffect(() => {
     let tokenAut = localStorage.getItem("token");

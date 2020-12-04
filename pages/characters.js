@@ -6,7 +6,7 @@ import CharSelector from "../components/pages/characters/char-selector";
 import MobContent from "../components/pages/characters/mob-content";
 import MobCharSelector from "../components/pages/characters/mob-char-selector";
 import Footer from "../components/footer";
-import styles from "../styles.module.css";
+import styles from "./styles.module.scss";
 import { createMedia } from "@artsy/fresnel";
 
 const { MediaContextProvider, Media } = createMedia({

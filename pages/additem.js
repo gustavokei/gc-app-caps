@@ -3,7 +3,7 @@ import Head from "../components/head";
 import AccountMenu from "../components/menu-account";
 import Content from "../components/pages/additem/content.js";
 import Footer from "../components/footer";
-import styles from "../styles.module.css";
+import styles from "./styles.module.scss";
 
 const AddItem = () => {
   return (

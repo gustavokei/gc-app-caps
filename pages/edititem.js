@@ -3,7 +3,7 @@ import Head from "../components/head";
 import Menu from "../components/menu-account";
 import Content from "../components/pages/edititem/content";
 import Footer from "../components/footer";
-import styles from "../styles.module.css";
+import styles from "./styles.module.scss";
 
 const EditItems = () => {
   return (

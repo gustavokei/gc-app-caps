@@ -31,7 +31,7 @@ function ModalRegister(props) {
         </Modal.Header>
         <Modal.Body>
           <Form name="regForm" method="POST">
-            <Form.Group controlId="registerUser">
+            <Form.Group>
               <Form.Label>Login</Form.Label>
               <Form.Control
                 type="text"
@@ -41,7 +41,7 @@ function ModalRegister(props) {
               />
             </Form.Group>
 
-            <Form.Group controlId="registerEmail">
+            <Form.Group>
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -51,7 +51,7 @@ function ModalRegister(props) {
               />
             </Form.Group>
 
-            <Form.Group controlId="registerPassword">
+            <Form.Group>
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
