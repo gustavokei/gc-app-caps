@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel, Button } from "react-bootstrap";
 import styles from "./slider.module.scss";
+import Link from "../../custom-link";
 
 const Slider = () => {
   return (
@@ -50,7 +51,9 @@ const Slider = () => {
       <div className={styles.bottomBar}>
         <span>Lorem ipsum dolor sit amet</span>
         <Button>
-          <a href="#">Recharge</a>
+          <Link href="/donation">
+            <a>Recharge</a>
+          </Link>
         </Button>
       </div>
       <div className={styles.bottomLine}></div>
