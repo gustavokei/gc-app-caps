@@ -15,6 +15,7 @@ const Menu = () => {
   const [ModalLogoutShow, SetModalLogoutShow] = React.useState(false);
   const [auth, isAuth] = React.useState(false);
   const [name, setName] = React.useState("");
+  const [usrname, setUsrName] = React.useState("");
 
   useEffect(() => {
     let tokenAut = localStorage.getItem("token");
@@ -30,6 +31,8 @@ const Menu = () => {
           if (response.data.message === "Successful Login...") {
             isAuth(true);
             console.log(auth);
+            setUsrName(response.data.verifiedJwt.body.name);
+            localStorage.setItem("userName", usrname);
             //    console.log(response.data.verifiedJwt.body.name);
             //setName(response.data.verifiedJwt.body.name);
 
@@ -49,6 +52,8 @@ const Menu = () => {
               );
           } else {
             isAuth(false);
+            setUsrName("0");
+            localStorage.setItem("userName", usrname);
             console.log(auth);
           }
         },

@@ -11,13 +11,13 @@ const FormEditCharacter = () => {
     {
       name: "Elesis Sieghart",
       jobs: ["Knight", "Spearman", "Sword Master", "Savior"],
-      desc: "First character",
+      desc: "First character"
     },
     {
       name: "Lire Eryuell",
       jobs: ["Archer", "Crossbowman", "Arch Ranger", "Nova"],
-      desc: "Second character",
-    },
+      desc: "Second character"
+    }
   ];
 
   // Set default values
@@ -30,7 +30,7 @@ const FormEditCharacter = () => {
     LoginUID: 0,
     Lose: 0,
     Promotion: 0,
-    Win: 0,
+    Win: 0
   };
   const [charArray, setCharArray] = useState(initialValue);
 
@@ -41,11 +41,11 @@ const FormEditCharacter = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         Login: login,
-        CharType: char,
-      }),
+        CharType: char
+      })
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setCharArray(data[0]);
       });
   };
@@ -62,22 +62,22 @@ const FormEditCharacter = () => {
         ExpS4: exp,
         Promotion: promo,
         Win: win,
-        Lose: lose,
-      }),
+        Lose: lose
+      })
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         return data;
       });
   };
 
   // Formik
   const formik = useFormik({
-    onSubmit: (values) => {
+    onSubmit: values => {
       // console.log(values);
       // console.log(expArray[values.Level]);
       updateChar(
-        "adm",
+        localStorage.getItem("userName"),
         state.char,
         values.Level,
         expArray[values.Level],
@@ -87,28 +87,46 @@ const FormEditCharacter = () => {
       );
     },
     validationSchema: yup.object({
-      Level: yup.number().integer().min(0).max(90).required(),
-      Promotion: yup.number().integer().min(0).max(3).required(),
-      Win: yup.number().integer().min(0).required(),
-      Lose: yup.number().integer().min(0).required(),
+      Level: yup
+        .number()
+        .integer()
+        .min(0)
+        .max(90)
+        .required(),
+      Promotion: yup
+        .number()
+        .integer()
+        .min(0)
+        .max(3)
+        .required(),
+      Win: yup
+        .number()
+        .integer()
+        .min(0)
+        .required(),
+      Lose: yup
+        .number()
+        .integer()
+        .min(0)
+        .required()
     }),
     initialValues: {
       Level: 0,
       Promotion: 0,
       Win: 0,
-      Lose: 0,
-    },
+      Lose: 0
+    }
   });
 
   // Update Form
   useEffect(() => {
     formik.resetForm();
     document.getElementById("editCharForm").reset();
-    getChar("adm", state.char);
+    getChar(localStorage.getItem("userName"), state.char);
   }, [state.char]);
 
   useEffect(() => {
-    Object.keys(charArray).map((key) => {
+    Object.keys(charArray).map(key => {
       formik.setFieldValue(key, charArray[key]);
     });
   }, [charArray]);
@@ -204,7 +222,7 @@ const FormEditCharacter = () => {
     263081358,
     293081358,
     333081358,
-    379000000,
+    379000000
   ];
 
   return (
