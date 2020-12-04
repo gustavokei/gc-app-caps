@@ -17,10 +17,10 @@ const AccountMenu = () => {
 
     axios
       .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut
+        token: tokenAut,
       })
       .then(
-        response => {
+        (response) => {
           console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -31,15 +31,15 @@ const AccountMenu = () => {
 
             axios
               .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name
+                Login: response.data.verifiedJwt.body.name,
               })
               .then(
-                response => {
+                (response) => {
                   console.log(response.data);
 
                   setName(response.data);
                 },
-                err => {
+                (err) => {
                   console.log(err);
                 }
               );
@@ -49,7 +49,7 @@ const AccountMenu = () => {
             SetModalLoggedoutShow(true);
           }
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );
@@ -77,7 +77,7 @@ const AccountMenu = () => {
                 <a className="nav-link">Edit Characters</a>
               </Link>
             </Nav.Item>
-            <NavDropdown title="Item" id="collasible-nav-dropdown">
+            <NavDropdown title="Items" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/additem">Add Items</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/edititem">Edit Items</NavDropdown.Item>
