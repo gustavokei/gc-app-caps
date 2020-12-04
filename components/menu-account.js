@@ -27,9 +27,9 @@ const AccountMenu = () => {
               </Link>
             </Nav.Item>
             <NavDropdown title="Item" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#item/">Items</NavDropdown.Item>
+              <NavDropdown.Item href="/additem">Add Items</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#itemn/1">Item 1</NavDropdown.Item>
+              <NavDropdown.Item href="/edititem">Edit Items</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
