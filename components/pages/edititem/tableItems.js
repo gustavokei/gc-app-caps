@@ -16,13 +16,15 @@ const FormEditCharacter = () => {
   const [update, toggleUpdate] = useState(false);
 
   const delItem = (itemuid) => {
-    axios.get(delitemurl + itemuid);
-    toggleUpdate((update) => !update);
+    axios.get(delitemurl + itemuid).then((response) => {
+      toggleUpdate((update) => !update);
+    });
   };
 
   const restoreItem = (itemuid) => {
-    axios.get(restoreitemurl + itemuid);
-    toggleUpdate((update) => !update);
+    axios.get(restoreitemurl + itemuid).then((response) => {
+      toggleUpdate((update) => !update);
+    });
   };
 
   useEffect(() => {
