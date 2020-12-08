@@ -1,3 +1,3 @@
 Screenshot of Pages:
 
-Homepage: 
+Homepage: https://github.com/gustavokei/gc-app-caps/wiki/Homepage
