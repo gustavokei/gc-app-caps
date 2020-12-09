@@ -60,3 +60,6 @@ The deploy to Netlify button above will create a new site and repo in one click.
 - [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
 
 Now Netlify will build and deploy your site whenever you push to git.
+
+## Documentation of Front-End
+https://github.com/gustavokei/gc-app-caps/wiki
