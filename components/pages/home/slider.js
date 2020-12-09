@@ -11,7 +11,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider1.jpg"
-            alt="slider1"
+            alt="girl with green hair and white dress"
             longdesc="slider.html"
           />
           <Carousel.Caption className={styles.customCaption}>
@@ -23,7 +23,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider2.jpg"
-            alt="slider2"
+            alt="boy with black hair and golden sword"
             longdesc="slider.html"
           />
 
@@ -36,7 +36,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider3.jpg"
-            alt="slider3"
+            alt="girl with white hair and golden dress"
             longdesc="slider.html"
           />
 

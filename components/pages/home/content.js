@@ -23,7 +23,11 @@ const Content = () => {
       <Row className={styles.customRow}>
         <div className="card-columns">
           <Card bg="dark" className={styles.newsCard}>
-            <Card.Img alt="news1img" variant="top" src="home/news1.jpg" />
+            <Card.Img
+              alt="orange hair and silver sword."
+              variant="top"
+              src="home/news1.jpg"
+            />
             <Card.Body>
               <Card.Title className={styles.newsTitle}>News Title</Card.Title>
               <Card.Subtitle className={styles.newsSubtitle}>
@@ -37,7 +41,11 @@ const Content = () => {
             </Card.Body>
           </Card>
           <Card bg="dark" className={styles.newsCard}>
-            <Card.Img alt="news2Img" variant="top" src="home/news2.jpg" />
+            <Card.Img
+              alt="purple dress and purple hair"
+              variant="top"
+              src="home/news2.jpg"
+            />
             <Card.Body>
               <Card.Title className={styles.newsTitle}>News Title</Card.Title>
               <Card.Subtitle className={styles.newsSubtitle}>
@@ -51,7 +59,11 @@ const Content = () => {
             </Card.Body>
           </Card>
           <Card bg="dark" className={styles.newsCard}>
-            <Card.Img alt="news3Img" variant="top" src="home/news3.jpg" />
+            <Card.Img
+              alt="maroon hair and maroon dress"
+              variant="top"
+              src="home/news3.jpg"
+            />
             <Card.Body>
               <Card.Title className={styles.newsTitle}>News Title</Card.Title>
               <Card.Subtitle className={styles.newsSubtitle}>

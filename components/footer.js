@@ -15,7 +15,12 @@ const Footer = () => {
       <Row className={styles.customRow}>
         <Col className={styles.customCol}>
           <div className={styles.footerLogo}>
-            <img alt="logoimg" src="logo.svg" width="183px" height="30px" />
+            <img
+              alt="image of white moon and yellow sun"
+              src="logo.svg"
+              width="183px"
+              height="30px"
+            />
           </div>
           <span className={styles.middleText}>
             Grand Chase &copy; is a <br className={styles.break} />

@@ -22,10 +22,10 @@ const Menu = () => {
 
     axios
       .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut,
+        token: tokenAut
       })
       .then(
-        (response) => {
+        response => {
           console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -38,15 +38,15 @@ const Menu = () => {
 
             axios
               .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name,
+                Login: response.data.verifiedJwt.body.name
               })
               .then(
-                (response) => {
+                response => {
                   console.log(response.data);
 
                   setName(response.data);
                 },
-                (err) => {
+                err => {
                   console.log(err);
                 }
               );
@@ -57,7 +57,7 @@ const Menu = () => {
             console.log(auth);
           }
         },
-        (err) => {
+        err => {
           console.log(err);
         }
       );
@@ -66,7 +66,11 @@ const Menu = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <img className={styles.menuLogo} src="logo.svg" alt="logoimg3" />
+        <img
+          className={styles.menuLogo}
+          src="logo.svg"
+          alt="yellow sun and white moon"
+        />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
