@@ -27,13 +27,25 @@ const Footer = () => {
               <FontAwesomeIcon icon={faDiscord} title="github" alt="github" />
             </a>
             <a href="www.facebook.com">
-              <FontAwesomeIcon icon={faFacebookSquare} />
+              <FontAwesomeIcon
+                icon={faFacebookSquare}
+                title="facebook"
+                alt="facebook"
+              />
             </a>
             <a href="www.instagram.com">
-              <FontAwesomeIcon icon={faInstagramSquare} />
+              <FontAwesomeIcon
+                icon={faInstagramSquare}
+                title="instagram"
+                alt="instagram"
+              />
             </a>
             <a href="www.youtube.com">
-              <FontAwesomeIcon icon={faYoutubeSquare} />
+              <FontAwesomeIcon
+                icon={faYoutubeSquare}
+                title="youtube"
+                alt="youtube"
+              />
             </a>
           </div>
         </Col>
