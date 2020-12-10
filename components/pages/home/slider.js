@@ -12,7 +12,6 @@ const Slider = () => {
             className={styles.customImg + " d-block"}
             src="home/slider1.jpg"
             alt="girl with green hair and white dress"
-            longdesc="slider.html"
           />
           <Carousel.Caption className={styles.customCaption}>
             <h3>First slide label</h3>
@@ -24,7 +23,6 @@ const Slider = () => {
             className={styles.customImg + " d-block"}
             src="home/slider2.jpg"
             alt="boy with black hair and golden sword"
-            longdesc="slider.html"
           />
 
           <Carousel.Caption className={styles.customCaption}>
@@ -37,7 +35,6 @@ const Slider = () => {
             className={styles.customImg + " d-block"}
             src="home/slider3.jpg"
             alt="girl with white hair and golden dress"
-            longdesc="slider.html"
           />
 
           <Carousel.Caption className={styles.customCaption}>

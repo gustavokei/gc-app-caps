@@ -23,16 +23,16 @@ const Footer = () => {
           </span>
 
           <div className={styles.social}>
-            <a href="#">
+            <a href="www.github.com">
               <FontAwesomeIcon icon={faDiscord} />
             </a>
-            <a href="#">
+            <a href="www.facebook.com">
               <FontAwesomeIcon icon={faFacebookSquare} />
             </a>
-            <a href="#">
+            <a href="www.instagram.com">
               <FontAwesomeIcon icon={faInstagramSquare} />
             </a>
-            <a href="#">
+            <a href="www.youtube.com">
               <FontAwesomeIcon icon={faYoutubeSquare} />
             </a>
           </div>
