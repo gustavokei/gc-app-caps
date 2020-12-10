@@ -10,11 +10,11 @@ function ModalRegister(props) {
       body: JSON.stringify({
         Login: log,
         passwd: pass,
-        email: emal,
-      }),
+        email: emal
+      })
     })
-      .then((response) => response.json())
-      .then((result) => {
+      .then(response => response.json())
+      .then(result => {
         console.log(result);
       });
   };
@@ -37,6 +37,7 @@ function ModalRegister(props) {
                 type="text"
                 id="login"
                 placeholder="Username"
+                maxlength="10"
                 required
               />
             </Form.Group>
