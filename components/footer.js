@@ -24,7 +24,7 @@ const Footer = () => {
 
           <div className={styles.social}>
             <a href="www.github.com">
-              <FontAwesomeIcon icon={faDiscord} />
+              <FontAwesomeIcon icon={faDiscord} title="github" alt="github" />
             </a>
             <a href="www.facebook.com">
               <FontAwesomeIcon icon={faFacebookSquare} />
