@@ -1,8 +1,8 @@
 .customContainer {
+  padding: 40px 0;
   @media (min-width: 992px) {
     padding: 20px 0;
-  }
-  padding: 40px 0;
+  } 
 }
 
 .customRow {
@@ -14,45 +14,55 @@
   display: flex !important;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   @media (min-width: 992px) {
     flex-direction: row;
   }
-  flex-direction: column;
+}
+
+.footerLogo {
+  width: auto;
+  height: 30px;
+  @media (min-width: 992px) {
+    height: auto;
+  }
 }
 
 .middleText {
   text-align: center;
-  padding: 30px;
+  padding: 30px 30px 15px;
+  font-size: 12px;
   @media (min-width: 992px) {
     padding: 30px 0;
+    .break {
+      display: none;
+    }
   }
 }
 
 .social {
-
+  display: flex;
+  flex-direction: row;
+  font-size: 42px;
   @media (min-width: 992px) {
     flex-direction: row;
     font-size: 32px;
   }
 
-  display: flex;
-  flex-direction: row;
-  font-size: 42px;
-  transform: translateX(10%);
-
   a {
     color: white;
     opacity: 0.5;
-    margin: 15px 0;
-    @media (min-width: 992px) {
-      width: 30px;
-      margin: 0 20px;
-    }
-    width: 80px;
+    margin: 0 20px;
+    font-size: 48px;
     transition: 0.3s all;
 
     &:hover {
       opacity: 1;
     }
+
+    @media (min-width: 992px) {
+      font-size: 32px;
+    }
+
   }
 }

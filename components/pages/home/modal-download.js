@@ -17,9 +17,6 @@ const ModalDownload = (props) => {
             </a>
           </h6>
         </Modal.Body>
-        {/* <Modal.Footer className={styles.custModalFooter}>
-          <Button variant="primary">Close</Button>
-        </Modal.Footer> */}
       </div>
     </Modal>
   );

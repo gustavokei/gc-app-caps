@@ -2,6 +2,7 @@ let GlobalContext = React.createContext();
 
 let initialState = {
   isAuth: false,
+  char: 0,
 };
 
 let reducer = (state, action) => {
@@ -10,6 +11,12 @@ let reducer = (state, action) => {
       return initialState;
     case "auth":
       return { ...state, isAuth: true };
+    case "selectChar":
+      return { ...state, char: action.payload };
+    case "prevChar":
+      return { ...state, char: state.char - 1 };
+    case "nextChar":
+      return { ...state, char: state.char + 1 };
     default:
       return state;
   }
