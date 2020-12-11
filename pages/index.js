@@ -8,21 +8,17 @@ import styles from "./styles.module.scss";
 
 const Home = () => {
   return (
-    <html lang="en">
-      <meta charSet="UTF-8" />
-      <title>Project Soluna</title>
-      <div>
-        <Head title="Project Soluna - Home" />
-        <Menu />
-        <Slider />
-        <div className={styles.content}>
-          <Content />
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
+    <div>
+      <Head title="Project Soluna - Home" />
+      <Menu />
+      <Slider />
+      <div className={styles.content}>
+        <Content />
       </div>
-    </html>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
+    </div>
   );
 };
 
