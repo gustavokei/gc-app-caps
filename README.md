@@ -14,7 +14,7 @@ The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Solun
 
 > It is a two-handed sword that can split into the weapons Sol, the larger, single-handed sword, and Luna, the smaller, almost dagger-like blade, where its name originated from.
 
-Composed as a full-stack solution, this project is also split in two repositories.
+Composed as a full-stack solution, this project is also split in two
 
 # Getting started
 
