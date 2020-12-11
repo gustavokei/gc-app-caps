@@ -20,7 +20,7 @@ Composed as a full-stack solution, this project is also split in two
 
 * Clone this repository on your local computer
 * Configure .env.local as needed 
-* Run the `npm install` and `npm start`.
+* Run the `npm install` and `npm start`
 
 ```
 git clone https://github.com/gustavokei/gc-app-caps.git
@@ -32,7 +32,7 @@ npm start
 // visit localhost:3000
 ```
 
-Your app should now be running on [localhost:3000](http://localhost:3000/).
+Your app should now be running on [localhost:3000](http://localhost:3000/)
 
 ## .env.local file configuration
 
