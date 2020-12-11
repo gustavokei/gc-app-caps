@@ -8,7 +8,7 @@ This app functions as a game portal where users can:
 * Add/edit/delete items
 * See PVE & PVP rankings (top 10)
 
-Developed using ONLY ReactJS with Hooks API + function components
+Developed using ReactJS with Hooks API + function components
 
 The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Soluna) from the Korean game [Grand Chase](https://grandchase.fandom.com/wiki/Grand_Chase_Wiki).
 
