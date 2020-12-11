@@ -49,7 +49,7 @@ const Slider = () => {
         <span>Lorem ipsum dolor sit amet</span>
         <Button>
           <Link href="/donation">
-            <a>Recharge</a>
+            <a>Donation</a>
           </Link>
         </Button>
       </div>

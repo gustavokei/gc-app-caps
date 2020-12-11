@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./reactpaypal.module.scss";
+import ModalLoggedout from "../home/modal-logged-out";
+import axios from "axios";
 
 export default function ReactPayPal() {
   const [paid, setPaid] = React.useState(false);
@@ -7,59 +9,108 @@ export default function ReactPayPal() {
   const [ready, setReady] = React.useState(false);
   const [user, setUser] = React.useState("Gustavo");
   const paypalRef = React.useRef();
+  const [ModalLoggedoutShow, SetModalLoggedoutShow] = React.useState(false);
+  const [auth, isAuth] = React.useState(false);
+  const [name, setName] = React.useState("");
 
   // Show PayPal buttons once the component loads
   React.useEffect(() => {
     let paypalScript = document.getElementById("paypal-script");
 
-    new Promise(resolve => {
-      if (paypalScript) {
-        resolve(true);
-      } else {
-        const target = document.body;
-        const tag = document.createElement("script");
-        setUser(localStorage.getItem("userName"));
-        tag.async = false;
-        tag.id = "paypal-script";
-        tag.src =
-          "https://www.paypal.com/sdk/js?client-id=" +
-          process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID +
-          "&currency=BRL";
-        target.appendChild(tag);
-        tag.addEventListener("load", resolve, {
-          once: true
-        });
-      }
-    }).then(() => {
-      setReady(true);
-      window.paypal
-        .Buttons({
-          createOrder: (data, actions) => {
-            return actions.order.create({
-              intent: "CAPTURE",
-              purchase_units: [
-                {
-                  description: "Your description",
-                  amount: {
-                    currency_code: "BRL",
-                    value: 10.0
+    let tokenAut = localStorage.getItem("token");
+
+    axios
+      .post(process.env.NEXT_PUBLIC_API + "verify", {
+        token: tokenAut
+      })
+      .then(
+        response => {
+          console.log(response.data.message);
+
+          if (response.data.message === "Successful Login...") {
+            isAuth(true);
+            console.log(auth);
+            //    console.log(response.data.verifiedJwt.body.name);
+            //setName(response.data.verifiedJwt.body.name);
+
+            axios
+              .post(process.env.NEXT_PUBLIC_API + "getemail", {
+                Login: response.data.verifiedJwt.body.name
+              })
+              .then(
+                response => {
+                  console.log(response.data);
+
+                  function capitalizeFirstLetter(string) {
+                    return string.charAt(0).toUpperCase() + string.slice(1);
                   }
+                  setName(response.data);
+
+                  new Promise(resolve => {
+                    if (paypalScript) {
+                      resolve(true);
+                    } else {
+                      const target = document.body;
+                      const tag = document.createElement("script");
+                      setUser(
+                        capitalizeFirstLetter(localStorage.getItem("userName"))
+                      );
+                      tag.async = false;
+                      tag.id = "paypal-script";
+                      tag.src =
+                        "https://www.paypal.com/sdk/js?client-id=" +
+                        process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID +
+                        "&currency=BRL";
+                      target.appendChild(tag);
+                      tag.addEventListener("load", resolve, {
+                        once: true
+                      });
+                    }
+                  }).then(() => {
+                    setReady(true);
+                    window.paypal
+                      .Buttons({
+                        createOrder: (data, actions) => {
+                          return actions.order.create({
+                            intent: "CAPTURE",
+                            purchase_units: [
+                              {
+                                description: "Your description",
+                                amount: {
+                                  currency_code: "BRL",
+                                  value: 10.0
+                                }
+                              }
+                            ]
+                          });
+                        },
+                        onApprove: async (data, actions) => {
+                          const order = await actions.order.capture();
+                          setPaid(true);
+                          console.log(order);
+                        },
+                        onError: err => {
+                          //   setError(err),
+                          console.error(err);
+                        }
+                      })
+                      .render(paypalRef.current);
+                  });
+                },
+                err => {
+                  console.log(err);
                 }
-              ]
-            });
-          },
-          onApprove: async (data, actions) => {
-            const order = await actions.order.capture();
-            setPaid(true);
-            console.log(order);
-          },
-          onError: err => {
-            //   setError(err),
-            console.error(err);
+              );
+          } else {
+            isAuth(false);
+            console.log(auth);
+            SetModalLoggedoutShow(true);
           }
-        })
-        .render(paypalRef.current);
-    });
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }, []);
 
   // Success
@@ -99,6 +150,11 @@ export default function ReactPayPal() {
       ) : (
         <span>Loading...</span>
       )}
+      <ModalLoggedout
+        centered
+        show={ModalLoggedoutShow}
+        onHide={() => SetModalLoggedoutShow(false)}
+      />
     </div>
   );
 }
