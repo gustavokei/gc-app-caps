@@ -125,8 +125,8 @@ const FormEditAccount = () => {
       <Form.Group>
         <Form.Label>Password</Form.Label>
         <Form.Control
-          type="text"
-          // defaultValue={formik.values.passwd}
+          type="password"
+          defaultValue={formik.values.passwd}
           name="passwd"
           placeholder="Enter new password"
           onChange={formik.handleChange}
