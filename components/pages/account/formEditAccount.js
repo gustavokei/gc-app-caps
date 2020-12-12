@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -6,6 +6,8 @@ import * as yup from "yup";
 const FormEditAccount = () => {
   // Set default values
   const initialValue = {
+    email: '',
+    passwd: '',
     gamePoint: 0,
     Cash: 0,
     VCPoint: 0,
@@ -30,7 +32,6 @@ const FormEditAccount = () => {
 
   // Update User Account data from API
   let updateAccount = (login, emailadd, pass, gamepoint, cash, virtualcash) => {
-  // let updateAccount = (login, emailadd, pass, gamepoint) => {
     return fetch(process.env.NEXT_PUBLIC_API + "upaccount", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -52,8 +53,8 @@ const FormEditAccount = () => {
   // Formik
   const formik = useFormik({
     onSubmit: (values) => {
-      console.log(values);
-      // console.log(expArray[values.Level]);
+      // console.log(values);
+
       updateAccount(
         "maria",
         values.email,
@@ -126,13 +127,16 @@ const FormEditAccount = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          defaultValue={formik.values.passwd}
+          // defaultValue={formik.values.passwd}
           name="passwd"
           placeholder="Enter new password"
           onChange={formik.handleChange}
           isValid={formik.touched.passwd && !formik.errors.passwd}
           isInvalid={formik.touched.passwd && formik.errors.passwd}
         />
+        <Form.Text className="text-muted">
+          Leave it blank to use old password.
+        </Form.Text>
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Password must be more than 3 characters
