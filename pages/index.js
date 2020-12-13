@@ -12,7 +12,6 @@ const Home = () => {
       <Head title="Project Soluna - Home" />
       <Menu />
       <Slider />
-      <h1>THIS IS A CHANGE</h1>
       <div className={styles.content}>
         <Content />
       </div>
