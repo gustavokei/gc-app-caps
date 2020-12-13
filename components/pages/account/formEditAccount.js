@@ -8,29 +8,29 @@ const FormEditAccount = () => {
   const initialValue = {
     gamePoint: 0,
     Cash: 0,
-    VCPoint: 0,
+    VCPoint: 0
   };
 
   const [accountArray, setAccountArray] = useState(initialValue);
 
   // Get User Account data from API
-  let getAccount = (login) => {
+  let getAccount = login => {
     return fetch(process.env.NEXT_PUBLIC_API + "account", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        Login: "maria",
-      }),
+        Login: login
+      })
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setAccountArray(data[0]);
       });
   };
 
   // Update User Account data from API
   let updateAccount = (login, emailadd, pass, gamepoint, cash, virtualcash) => {
-  // let updateAccount = (login, emailadd, pass, gamepoint) => {
+    // let updateAccount = (login, emailadd, pass, gamepoint) => {
     return fetch(process.env.NEXT_PUBLIC_API + "upaccount", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -41,21 +41,21 @@ const FormEditAccount = () => {
         gamePoint: gamepoint,
         Cash: cash,
         VCPoint: virtualcash
-      }),
+      })
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         return data;
       });
   };
 
   // Formik
   const formik = useFormik({
-    onSubmit: (values) => {
+    onSubmit: values => {
       console.log(values);
       // console.log(expArray[values.Level]);
       updateAccount(
-        "maria",
+        localStorage.getItem("userName"),
         values.email,
         values.passwd,
         values.gamePoint,
@@ -65,28 +65,43 @@ const FormEditAccount = () => {
     },
     validationSchema: yup.object({
       Login: yup.string().required(),
-      email: yup.string().email().required(),
-      passwd: yup.string().min(3).required(),
-      gamePoint: yup.number().min(0).required(),
-      Cash: yup.number().min(0).required(),
-      VCPoint: yup.number().min(0).required(),
+      email: yup
+        .string()
+        .email()
+        .required(),
+      passwd: yup
+        .string()
+        .min(3)
+        .required(),
+      gamePoint: yup
+        .number()
+        .min(0)
+        .required(),
+      Cash: yup
+        .number()
+        .min(0)
+        .required(),
+      VCPoint: yup
+        .number()
+        .min(0)
+        .required()
     }),
     initialValues: {
       gamePoint: 0,
       Cash: 0,
-      VCPoint: 0,
-    },
+      VCPoint: 0
+    }
   });
 
   // Update Form
   useEffect(() => {
     formik.resetForm();
     document.getElementById("editAccountForm").reset();
-    getAccount("maria");
+    getAccount(localStorage.getItem("userName"));
   }, []);
 
   useEffect(() => {
-    Object.keys(accountArray).map((key) => {
+    Object.keys(accountArray).map(key => {
       formik.setFieldValue(key, accountArray[key]);
     });
   }, [accountArray]);

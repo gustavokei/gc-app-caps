@@ -7,7 +7,7 @@ import { faArrowAltCircleRight, faArrowAltCircleLeft } from "@fortawesome/free-s
 
 const VideoContent = () => {
   
-  const [video, setVideo] = React.useState(1);
+  const [video, setVideo] = React.useState(0);
 
   const components = [
     'GS2i5xqfoY8',
@@ -37,8 +37,8 @@ const VideoContent = () => {
           </div>
         </Col>
       </Row>
-      <Row >
-        <Col>
+      <Row className={styles.customRow}>
+        <Col className={styles.videoColumn}>
           <div className={styles.customMainVideoGroup}>
             <div >
               <FontAwesomeIcon className={styles.customBackBtn} icon={faArrowAltCircleLeft} />
@@ -62,25 +62,25 @@ const VideoContent = () => {
         <Col className={styles.customVideoColumn}>
           <img src={"about/video1.jpg"} onClick={() => changeVideo('0')} />
           <div className={styles.bottomVideoTitleBar}>
-            <span>Grand Chase - Season 5 Trailer</span>
+            <span>GC - Season 5 Trailer</span>
           </div>
         </Col>
         <Col className={styles.customVideoColumn}>
           <img src={"about/video2.jpg"} onClick={() => changeVideo('1')} />
           <div className={styles.bottomVideoTitleBar}>
-            <span>Grand Chase - Trailer PC</span>
+            <span>GC - Trailer PC</span>
           </div>
         </Col>  
         <Col className={styles.customVideoColumn}>
           <img src={"about/video3.jpg"} onClick={() => changeVideo('2')} />
           <div className={styles.bottomVideoTitleBar}>
-            <span>Grand Chase - Ronan Reborn Trailer</span>
+            <span>GC - Ronan Reborn Trailer</span>
           </div>
         </Col>  
         <Col className={styles.customVideoColumn}>
           <img src={"about/video4.jpg"} onClick={() => changeVideo('3')} />
           <div className={styles.bottomVideoTitleBar}>
-            <span>Grand Chase - Dimensional Chaser Trailer</span>
+            <span>GC - Dimensional Chaser Trailer</span>
           </div>
         </Col>  
       </Row>

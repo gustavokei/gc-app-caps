@@ -56,7 +56,7 @@ let charData = [
     ctype: 7,
   },
   {
-    name: "Ercnard",
+    name: "Sieghart",
     jobs: ["Gladiator", "Warlord", "Duelist", "Prime Knight"],
     desc:
       "Sieghart was a master Gladiator of Kanavan long, long ago. His name was legendary and his feats in battle have been recounted in history books. At one time, he alone staved off an assault of one hundred goblins, a story told to children of even the smallest villages. He rejected all titles and awards bestowed upon him by nobility and left the knighthood to seek his own goals. While on his journey, he came upon the ruins of an ancient city and disappeared. After a year had passed, he was given up for dead and the entire kingdom mourned the passing of the legendary hero.",
