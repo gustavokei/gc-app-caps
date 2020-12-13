@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Head title="Project Soluna - Home" />
       <Menu />
-      <h1>THIS IS A CHANGE</h1>
+      <Slider />
       <div className={styles.content}>
         <Content />
       </div>
