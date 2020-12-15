@@ -35,21 +35,24 @@ const Menu = () => {
             localStorage.setItem("userName", usrname);
             //    console.log(response.data.verifiedJwt.body.name);
             //setName(response.data.verifiedJwt.body.name);
-
-            axios
-              .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name
-              })
-              .then(
-                response => {
-                  console.log(response.data);
-
-                  setName(response.data);
-                },
-                err => {
-                  console.log(err);
-                }
-              );
+            if (name === "") {
+              axios
+                .post(process.env.NEXT_PUBLIC_API + "getemail", {
+                  Login: response.data.verifiedJwt.body.name
+                })
+                .then(
+                  response => {
+                    console.log(response.data);
+                    localStorage.setItem("userEmail", response.data);
+                    setName(response.data);
+                  },
+                  err => {
+                    console.log(err);
+                  }
+                );
+            } else {
+              setName(localStorage.getItem("userEmail"));
+            }
           } else {
             isAuth(false);
             setUsrName("0");
