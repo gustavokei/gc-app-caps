@@ -5,7 +5,7 @@ import {
   faDiscord,
   faFacebookSquare,
   faInstagramSquare,
-  faYoutubeSquare,
+  faYoutubeSquare
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./footer.module.scss";
 
@@ -15,28 +15,37 @@ const Footer = () => {
       <Row className={styles.customRow}>
         <Col className={styles.customCol}>
           <div className={styles.footerLogo}>
-            <img        
-              src="logo.svg"
-              width="183px"
-              height="30px"
-            />
+            <img alt="" src="logo.svg" width="183px" height="30px" />
           </div>
           <span className={styles.middleText}>
-            Grand Chase &copy; is a <br className={styles.break}/>registered trademark of KOG Co Ltd.
+            Grand Chase &copy; is a <br className={styles.break} />
+            registered trademark of KOG Co Ltd.
           </span>
 
           <div className={styles.social}>
-            <a href="#">
-              <FontAwesomeIcon icon={faDiscord} />
+            <a href="www.github.com">
+              <FontAwesomeIcon icon={faDiscord} title="github" alt="github" />
             </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFacebookSquare} />
+            <a href="www.facebook.com">
+              <FontAwesomeIcon
+                icon={faFacebookSquare}
+                title="facebook"
+                alt="facebook"
+              />
             </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faInstagramSquare} />
+            <a href="www.instagram.com">
+              <FontAwesomeIcon
+                icon={faInstagramSquare}
+                title="instagram"
+                alt="instagram"
+              />
             </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faYoutubeSquare} />
+            <a href="www.youtube.com">
+              <FontAwesomeIcon
+                icon={faYoutubeSquare}
+                title="youtube"
+                alt="youtube"
+              />
             </a>
           </div>
         </Col>

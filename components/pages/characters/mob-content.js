@@ -2,22 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import styles from "./mob-content.module.scss";
 import { GlobalContext } from "../../models/global-provider";
+import charData from "./char-selector-data";
 
 const MobContent = () => {
   let { state } = useContext(GlobalContext);
-
-  let charData = [
-    {
-      name: "Elesis Sieghart",
-      jobs: ["Knight", "Spearman", "Sword Master", "Savior"],
-      desc: "First character",
-    },
-    {
-      name: "Lire Eryuell",
-      jobs: ["Archer", "Crossbowman", "Arch Ranger", "Nova"],
-      desc: "Second character",
-    },
-  ];
 
   return (
     <div className={styles.wrapper}>

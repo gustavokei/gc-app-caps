@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel, Button } from "react-bootstrap";
 import styles from "./slider.module.scss";
+import Link from "../../custom-link";
 
 const Slider = () => {
   return (
@@ -10,7 +11,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider1.jpg"
-            alt="First slide"
+            alt="girl with green hair and white dress"
           />
           <Carousel.Caption className={styles.customCaption}>
             <h3>First slide label</h3>
@@ -21,7 +22,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider2.jpg"
-            alt="Third slide"
+            alt="boy with black hair and golden sword"
           />
 
           <Carousel.Caption className={styles.customCaption}>
@@ -33,7 +34,7 @@ const Slider = () => {
           <img
             className={styles.customImg + " d-block"}
             src="home/slider3.jpg"
-            alt="Third slide"
+            alt="girl with white hair and golden dress"
           />
 
           <Carousel.Caption className={styles.customCaption}>
@@ -47,7 +48,9 @@ const Slider = () => {
       <div className={styles.bottomBar}>
         <span>Lorem ipsum dolor sit amet</span>
         <Button>
-          <a href="#">Recharge</a>
+          <Link href="/donation">
+            <a>Donation</a>
+          </Link>
         </Button>
       </div>
       <div className={styles.bottomLine}></div>

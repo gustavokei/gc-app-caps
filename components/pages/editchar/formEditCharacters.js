@@ -1,24 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { GlobalContext } from "../../models/global-provider";
+import charData from "../characters/char-selector-data";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 const FormEditCharacter = () => {
   // Global context for char-selector component
   let { state } = useContext(GlobalContext);
-  let charData = [
-    {
-      name: "Elesis Sieghart",
-      jobs: ["Knight", "Spearman", "Sword Master", "Savior"],
-      desc: "First character",
-    },
-    {
-      name: "Lire Eryuell",
-      jobs: ["Archer", "Crossbowman", "Arch Ranger", "Nova"],
-      desc: "Second character",
-    },
-  ];
 
   // Set default values
   const initialValue = {
@@ -77,20 +66,20 @@ const FormEditCharacter = () => {
       // console.log(values);
       // console.log(expArray[values.Level]);
       updateChar(
-        "adm",
+        localStorage.getItem("userName"),
         state.char,
         values.Level,
-        expArray[values.Level],
+        expArray[values.Level - 1],
         values.Promotion,
         values.Win,
         values.Lose
       );
     },
     validationSchema: yup.object({
-      Level: yup.number().min(0).max(90).required(),
-      Promotion: yup.number().min(0).max(3).required(),
-      Win: yup.number().required(),
-      Lose: yup.number().required(),
+      Level: yup.number().integer().min(0).max(90).required(),
+      Promotion: yup.number().integer().min(0).max(3).required(),
+      Win: yup.number().integer().min(0).required(),
+      Lose: yup.number().integer().min(0).required(),
     }),
     initialValues: {
       Level: 0,
@@ -104,7 +93,7 @@ const FormEditCharacter = () => {
   useEffect(() => {
     formik.resetForm();
     document.getElementById("editCharForm").reset();
-    getChar("adm", state.char);
+    getChar(localStorage.getItem("userName"), state.char);
   }, [state.char]);
 
   useEffect(() => {
@@ -211,11 +200,7 @@ const FormEditCharacter = () => {
     <Form id="editCharForm" noValidate onSubmit={formik.handleSubmit}>
       <Form.Group controlId="char">
         <Form.Label>Character</Form.Label>
-        <Form.Control
-          type="text"
-          value={charData[state.char].jobs[0]}
-          disabled
-        />
+        <Form.Control type="text" value={charData[state.char].name} disabled />
       </Form.Group>
       <Form.Group>
         <Form.Label>Level</Form.Label>
@@ -259,7 +244,7 @@ const FormEditCharacter = () => {
         />
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
-          Win must be a number
+          Win must be a positive number
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group>
@@ -274,7 +259,7 @@ const FormEditCharacter = () => {
         />
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
-          Lose must be a number
+          Lose must be a positive number
         </Form.Control.Feedback>
       </Form.Group>
       <Button type="submit">Save</Button>
