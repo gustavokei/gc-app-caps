@@ -29,7 +29,7 @@ const MobContent = () => {
             </div>
             <img
               className={styles.charimg}
-              src={"characters/img-char-" + state.char + ".png"}
+              src={"characters/mob-img-char-" + state.char + ".png"}
               alt="Elesis"
             />
           </Col>
