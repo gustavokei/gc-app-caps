@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import styles from "./modal.module.scss";
 import props from "prop-types";
+import Router from "next/router";
 
-const ModalLoggedout = props => {
+const ModalLoggedout = (props) => {
   const close = () => {
     localStorage.clear();
-    window.open("/");
-    window.close();
+    Router.push("/");
   };
 
   return (

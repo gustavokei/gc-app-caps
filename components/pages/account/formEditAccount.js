@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -6,31 +6,32 @@ import * as yup from "yup";
 const FormEditAccount = () => {
   // Set default values
   const initialValue = {
+    email: '',
+    passwd: '',
     gamePoint: 0,
     Cash: 0,
-    VCPoint: 0
+    VCPoint: 0,
   };
 
   const [accountArray, setAccountArray] = useState(initialValue);
 
   // Get User Account data from API
-  let getAccount = login => {
+  let getAccount = (login) => {
     return fetch(process.env.NEXT_PUBLIC_API + "account", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        Login: login
-      })
+        Login: "maria",
+      }),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setAccountArray(data[0]);
       });
   };
 
   // Update User Account data from API
   let updateAccount = (login, emailadd, pass, gamepoint, cash, virtualcash) => {
-    // let updateAccount = (login, emailadd, pass, gamepoint) => {
     return fetch(process.env.NEXT_PUBLIC_API + "upaccount", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -41,21 +42,21 @@ const FormEditAccount = () => {
         gamePoint: gamepoint,
         Cash: cash,
         VCPoint: virtualcash
-      })
+      }),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         return data;
       });
   };
 
   // Formik
   const formik = useFormik({
-    onSubmit: values => {
-      console.log(values);
-      // console.log(expArray[values.Level]);
+    onSubmit: (values) => {
+      // console.log(values);
+
       updateAccount(
-        localStorage.getItem("userName"),
+        "maria",
         values.email,
         values.passwd,
         values.gamePoint,
@@ -65,43 +66,28 @@ const FormEditAccount = () => {
     },
     validationSchema: yup.object({
       Login: yup.string().required(),
-      email: yup
-        .string()
-        .email()
-        .required(),
-      passwd: yup
-        .string()
-        .min(3)
-        .required(),
-      gamePoint: yup
-        .number()
-        .min(0)
-        .required(),
-      Cash: yup
-        .number()
-        .min(0)
-        .required(),
-      VCPoint: yup
-        .number()
-        .min(0)
-        .required()
+      email: yup.string().email().required(),
+      passwd: yup.string().min(3).required(),
+      gamePoint: yup.number().min(0).required(),
+      Cash: yup.number().min(0).required(),
+      VCPoint: yup.number().min(0).required(),
     }),
     initialValues: {
       gamePoint: 0,
       Cash: 0,
-      VCPoint: 0
-    }
+      VCPoint: 0,
+    },
   });
 
   // Update Form
   useEffect(() => {
     formik.resetForm();
     document.getElementById("editAccountForm").reset();
-    getAccount(localStorage.getItem("userName"));
+    getAccount("maria");
   }, []);
 
   useEffect(() => {
-    Object.keys(accountArray).map(key => {
+    Object.keys(accountArray).map((key) => {
       formik.setFieldValue(key, accountArray[key]);
     });
   }, [accountArray]);
@@ -140,7 +126,7 @@ const FormEditAccount = () => {
       <Form.Group>
         <Form.Label>Password</Form.Label>
         <Form.Control
-          type="text"
+          type="password"
           // defaultValue={formik.values.passwd}
           name="passwd"
           placeholder="Enter new password"
@@ -148,6 +134,9 @@ const FormEditAccount = () => {
           isValid={formik.touched.passwd && !formik.errors.passwd}
           isInvalid={formik.touched.passwd && formik.errors.passwd}
         />
+        <Form.Text className="text-muted">
+          Leave it blank to use old password.
+        </Form.Text>
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
         <Form.Control.Feedback type="invalid">
           Password must be more than 3 characters

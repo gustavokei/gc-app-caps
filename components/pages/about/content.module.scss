@@ -59,44 +59,44 @@
     }
 
     .customBackBtn {
-        position: relative;
-        display : block;
-        margin-right: 5px;
-        font-size: 42px;
-        transform: translateY(180%);
-        color: white;
+      position: relative;
+      display: block;
+      margin-right: 5px;
+      font-size: 42px;
+      transform: translateY(180%);
+      color: white;
     }
 
-    .customPrevBtn  {
-        position: absolute;
-        margin-right: 5px;
-        font-size: 42px;
-        transform: translateY(80%);
-        color: white;
-        :hover {
-            color: #007bff;
-        }
+    .customPrevBtn {
+      position: absolute;
+      margin-right: 5px;
+      font-size: 42px;
+      transform: translateY(80%);
+      color: white;
+      :hover {
+        color: #007bff;
+      }
     }
 
     .customForwardBtn {
-        position: relative;
-        display : block;
-        margin-left: 5px;
-        font-size: 42px;
-        transform: translateY(180%);
-        color: white;
+      position: relative;
+      display: block;
+      margin-left: 5px;
+      font-size: 42px;
+      transform: translateY(180%);
+      color: white;
     }
 
-    .customNextBtn  {
-        position: absolute;
-        margin-left: 5px;
-        font-size: 42px;
-        transform: translateY(80%);
-        color: white;
+    .customNextBtn {
+      position: absolute;
+      margin-left: 5px;
+      font-size: 42px;
+      transform: translateY(80%);
+      color: white;
 
-        :hover {
-            color: #007bff;
-        }
+      :hover {
+        color: #007bff;
+      }
     }
 
     @media only screen and (min-width: 992px) {
@@ -141,42 +141,42 @@
   }
 }
 
-.customVideoContainer{
+.customVideoContainer {
   display: flex;
-  width: 100%;
+  width: auto;
   margin-top: 40px;
 
-  @media (max-width: 768px) {
-      display: none;
+  @media (max-width: 765px) {
+    display: none;
   }
 
-  .customVideoColumn{
-      margin: 16px;
-      position: relative;
-      bottom: 0;
-      padding: 5px;
-      overflow: hidden;
-  
-      img{
-        width: 240px;
-        height: 135px;
-      };
+  .customVideoColumn {
+    margin: 16px;
+    position: relative;
+    bottom: 0;
+    padding: 5px;
+    overflow: hidden;
 
-      img:hover {
-          box-shadow: 0 0 5px 3px rgba(2, 141, 187, 0.5);
+    img {
+      width: 240px;
+      height: 135px;
+    }
+
+    img:hover {
+      box-shadow: 0 0 5px 3px rgba(2, 141, 187, 0.5);
+    }
+
+    .bottomVideoTitleBar {
+      width: 240px;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      transform: translateY(-100%);
+
+      span {
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        padding: 10px;
       }
-
-      .bottomVideoTitleBar {         
-          width: 240px;
-          height: 30px;
-          background: rgba(0, 0, 0, 0.8); 
-          transform: translateY(-100%);
-
-          span {
-              font-family: Roboto, sans-serif;
-              font-size: 12px;
-              padding: 10px;           
-          }
-      }
+    }
   }
 }
