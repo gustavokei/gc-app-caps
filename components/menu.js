@@ -14,7 +14,7 @@ const Menu = () => {
   const [ModalRegisterShow, SetModalRegisterShow] = useState(false);
   const [ModalLogoutShow, SetModalLogoutShow] = useState(false);
   const [auth, isAuth] = useState(false);
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [usrname, setUsrName] = useState("");
 
   useEffect(() => {
@@ -26,36 +26,40 @@ const Menu = () => {
       })
       .then(
         response => {
-          console.log(response.data.message);
+          //    console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
             isAuth(true);
-            console.log(auth);
+            //     console.log(auth);
             setUsrName(response.data.verifiedJwt.body.name);
-            localStorage.setItem("userName", usrname);
             //    console.log(response.data.verifiedJwt.body.name);
             //setName(response.data.verifiedJwt.body.name);
-            if (name === "") {
+            localStorage.setItem(
+              "UniqueID",
+              response.data.verifiedJwt.body.UniqueID
+            );
+            if (email === "") {
               axios
                 .post(process.env.NEXT_PUBLIC_API + "getemail", {
                   Login: response.data.verifiedJwt.body.name
                 })
                 .then(
                   response => {
-                    console.log(response.data);
+                    //     console.log(response.data);
                     localStorage.setItem("userEmail", response.data);
-                    setName(response.data);
+                    setEmail(response.data);
                   },
                   err => {
                     console.log(err);
                   }
                 );
             } else {
-              setName(localStorage.getItem("userEmail"));
+              setEmail(localStorage.getItem("userEmail"));
             }
           } else {
             isAuth(false);
             setUsrName("0");
+            setEmail("");
             localStorage.setItem("userName", usrname);
             console.log(auth);
           }
@@ -119,7 +123,7 @@ const Menu = () => {
               <Nav.Link onClick={() => SetModalLoginShow(true)}>Login</Nav.Link>
             ) : (
               <Nav>
-                <NavDropdown title={name} id="collasible-nav-dropdown">
+                <NavDropdown title={email} id="collasible-nav-dropdown">
                   <NavDropdown.Item onClick={() => SetModalLogoutShow(true)}>
                     Logout
                   </NavDropdown.Item>

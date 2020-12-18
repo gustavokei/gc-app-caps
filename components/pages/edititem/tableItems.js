@@ -6,29 +6,32 @@ import axios from "axios";
 const FormEditCharacter = () => {
   // Set initial value for character count
   let count = 1;
+  const [LoginUid, setLoginUid] = useState("");
 
   // Get Character data from API
-  const getitemurl = process.env.NEXT_PUBLIC_API + "getitem/1926";
+  const getitemurl = process.env.NEXT_PUBLIC_API + "getitem/";
   const delitemurl = process.env.NEXT_PUBLIC_API + "delitem/";
   const restoreitemurl = process.env.NEXT_PUBLIC_API + "restoreitem/";
 
   const [data, setData] = useState([]);
   const [update, toggleUpdate] = useState(false);
 
-  const delItem = (itemuid) => {
-    axios.get(delitemurl + itemuid).then((response) => {
-      toggleUpdate((update) => !update);
+  const delItem = itemuid => {
+    axios.get(delitemurl + itemuid).then(response => {
+      toggleUpdate(update => !update);
     });
   };
 
-  const restoreItem = (itemuid) => {
-    axios.get(restoreitemurl + itemuid).then((response) => {
-      toggleUpdate((update) => !update);
+  const restoreItem = itemuid => {
+    axios.get(restoreitemurl + itemuid).then(response => {
+      toggleUpdate(update => !update);
     });
   };
 
   useEffect(() => {
-    axios.get(getitemurl).then((json) => setData(json.data[0]));
+    const UID = localStorage.getItem("UniqueID");
+    setLoginUid(UID);
+    axios.get(getitemurl + UID).then(json => setData(json.data[0]));
   }, [update]);
 
   return (
@@ -42,7 +45,7 @@ const FormEditCharacter = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((data) => {
+          {data.map(data => {
             count++;
             return (
               <tr key={count} className={styles.customTable}>

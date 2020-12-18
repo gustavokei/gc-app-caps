@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import styles from "./modal.module.scss";
+import Router from "next/router";
 
 function ModalRegister(props) {
+  // const [validated, setValidated] = useState(false);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    event.stopPropagation();
+    const form = event.currentTarget;
+
+    register(form.login.value, form.email.value, form.password.value);
+  };
+
   let register = async (log, emal, pass) => {
-    return fetch(process.env.NEXT_PUBLIC_API + "register", {
+    fetch(process.env.NEXT_PUBLIC_API + "register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -13,9 +24,15 @@ function ModalRegister(props) {
         email: emal
       })
     })
-      .then(response => response.json())
+      .then(response => response.status)
       .then(result => {
-        console.log(result);
+        if (result === 400) {
+          alert("User Already Registered !");
+        } else {
+          alert("User Registered Successfully!");
+          Router.push("/");
+          props.onHide();
+        }
       });
   };
 
@@ -30,7 +47,7 @@ function ModalRegister(props) {
           <Modal.Title>Register</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form name="regForm" method="POST">
+          <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label>Login</Form.Label>
               <Form.Control
@@ -62,17 +79,7 @@ function ModalRegister(props) {
               />
             </Form.Group>
             <Modal.Footer className={styles.custModalFooter}>
-              <Button
-                type="submit"
-                onClick={() =>
-                  register(
-                    document.getElementById("login").value,
-                    document.getElementById("email").value,
-                    document.getElementById("password").value
-                  )
-                }
-                variant="primary"
-              >
+              <Button type="submit" variant="primary">
                 Submit
               </Button>
             </Modal.Footer>
