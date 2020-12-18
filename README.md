@@ -19,11 +19,7 @@ Composed as a full-stack solution, this project is also split in two
 # Live Demo
 [https://grandchase.online/](https://grandchase.online/)
 
-Demo Account:
-
-Login: new2
-
-Password 123
+Please, register your own account.
 
 # Getting started
 
