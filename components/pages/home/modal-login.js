@@ -14,7 +14,7 @@ const ValidationSchema = Yup.object().shape({
   pass: Yup.string()
     .min(3, "Too Short!")
     .max(255, "Too Long!")
-    .required("Required"),
+    .required("Required")
 });
 
 function ModalLogin(props) {
@@ -26,7 +26,7 @@ function ModalLogin(props) {
         log: "",
         pass: "",
         token: "",
-        auth: "",
+        auth: ""
       }}
       validationSchema={ValidationSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -38,19 +38,24 @@ function ModalLogin(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               Login: values.log,
-              passwd: values.pass,
-            }),
+              passwd: values.pass
+            })
           })
-            .then((response) => response.json())
-            .then((result) => {
+            .then(response => response.json())
+            .then(result => {
               if (result.token) {
                 console.log(result);
                 localStorage.setItem("token", result.token);
+                localStorage.setItem("userName", values.log);
+                localStorage.setItem("userEmail", "");
+                console.log(values.log);
                 //  alert(JSON.stringify(localStorage.getItem('token'), null, 2));
                 setErr("Correct Credentials");
                 isAuth(auth + 1);
                 Router.push("/");
                 props.onHide();
+                resetForm();
+                setErr("");
               } else {
                 console.log(result);
                 setErr("Invalid username or password");
@@ -70,7 +75,7 @@ function ModalLogin(props) {
         handleChange,
         handleBlur,
         handleSubmit,
-        isSubmitting,
+        isSubmitting
       }) => (
         <Modal {...props} size="md">
           <div className={styles.custModal}>

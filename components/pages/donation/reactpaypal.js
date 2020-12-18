@@ -11,14 +11,13 @@ export default function ReactPayPal() {
   const paypalRef = React.useRef();
   const [ModalLoggedoutShow, SetModalLoggedoutShow] = React.useState(false);
   const [auth, isAuth] = React.useState(false);
-  const [name, setName] = React.useState("");
 
   // Show PayPal buttons once the component loads
   React.useEffect(() => {
     let paypalScript = document.getElementById("paypal-script");
-
+    let userName = localStorage.getItem("userName");
     let tokenAut = localStorage.getItem("token");
-
+    let capUser = userName.charAt(0).toUpperCase() + userName.slice(1);
     axios
       .post(process.env.NEXT_PUBLIC_API + "verify", {
         token: tokenAut
@@ -33,74 +32,54 @@ export default function ReactPayPal() {
             //    console.log(response.data.verifiedJwt.body.name);
             //setName(response.data.verifiedJwt.body.name);
 
-            axios
-              .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name
-              })
-              .then(
-                response => {
-                  console.log(response.data);
-
-                  function capitalizeFirstLetter(string) {
-                    return string.charAt(0).toUpperCase() + string.slice(1);
-                  }
-                  setName(response.data);
-
-                  new Promise(resolve => {
-                    if (paypalScript) {
-                      resolve(true);
-                    } else {
-                      const target = document.body;
-                      const tag = document.createElement("script");
-                      setUser(
-                        capitalizeFirstLetter(localStorage.getItem("userName"))
-                      );
-                      tag.async = false;
-                      tag.id = "paypal-script";
-                      tag.src =
-                        "https://www.paypal.com/sdk/js?client-id=" +
-                        process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID +
-                        "&currency=BRL";
-                      target.appendChild(tag);
-                      tag.addEventListener("load", resolve, {
-                        once: true
-                      });
-                    }
-                  }).then(() => {
-                    setReady(true);
-                    window.paypal
-                      .Buttons({
-                        createOrder: (data, actions) => {
-                          return actions.order.create({
-                            intent: "CAPTURE",
-                            purchase_units: [
-                              {
-                                description: "Your description",
-                                amount: {
-                                  currency_code: "BRL",
-                                  value: 10.0
-                                }
-                              }
-                            ]
-                          });
-                        },
-                        onApprove: async (data, actions) => {
-                          const order = await actions.order.capture();
-                          setPaid(true);
-                          console.log(order);
-                        },
-                        onError: err => {
-                          //   setError(err),
-                          console.error(err);
+            new Promise(resolve => {
+              if (paypalScript) {
+                resolve(true);
+              } else {
+                const target = document.body;
+                const tag = document.createElement("script");
+                setUser(capUser);
+                tag.async = false;
+                tag.id = "paypal-script";
+                tag.src =
+                  "https://www.paypal.com/sdk/js?client-id=" +
+                  process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID +
+                  "&currency=BRL";
+                target.appendChild(tag);
+                tag.addEventListener("load", resolve, {
+                  once: true
+                });
+              }
+            }).then(() => {
+              setReady(true);
+              window.paypal
+                .Buttons({
+                  createOrder: (data, actions) => {
+                    return actions.order.create({
+                      intent: "CAPTURE",
+                      purchase_units: [
+                        {
+                          description: "Your description",
+                          amount: {
+                            currency_code: "BRL",
+                            value: 10.0
+                          }
                         }
-                      })
-                      .render(paypalRef.current);
-                  });
-                },
-                err => {
-                  console.log(err);
-                }
-              );
+                      ]
+                    });
+                  },
+                  onApprove: async (data, actions) => {
+                    const order = await actions.order.capture();
+                    setPaid(true);
+                    console.log(order);
+                  },
+                  onError: err => {
+                    //   setError(err),
+                    console.error(err);
+                  }
+                })
+                .render(paypalRef.current);
+            });
           } else {
             isAuth(false);
             console.log(auth);

@@ -3,10 +3,10 @@ import { Modal, Button } from "react-bootstrap";
 import styles from "./modal.module.scss";
 import Router from "next/router";
 
-const ModalLogout = (props) => {
+const ModalLogout = props => {
   const close = () => {
-    Router.push("/");
-    localStorage.clear();
+    setTimeout(() => Router.push("/"), 1000);
+    setTimeout(() => localStorage.clear(), 1000);
     props.onHide();
   };
 
