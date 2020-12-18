@@ -17,7 +17,7 @@ The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Solun
 Composed as a full-stack solution, this project is also split in two
 
 # Live Demo
-[http://grandchase.online/](http://grandchase.online/)
+[https://grandchase.online/](https://grandchase.online/)
 
 Demo Account:
 
