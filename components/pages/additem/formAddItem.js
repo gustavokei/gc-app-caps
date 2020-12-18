@@ -7,7 +7,7 @@ const FormAddItem = () => {
   // Set default values
   const initialValue = {
     LoginUid: 0,
-    ItemId: 0
+    ItemId: 0,
   };
   const [LoginUid, setLoginUid] = useState("");
 
@@ -17,41 +17,31 @@ const FormAddItem = () => {
       process.env.NEXT_PUBLIC_API + "additem/" + loginuid + "/" + itemid,
       {
         method: "GET",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       }
     )
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data == "Error! Invalid ItemId") {
           alert(data);
-        } else
-          alert(
-            "Item '" +
-              Object.values(data[0]) +
-              "' was added! to UniqueUID: " +
-              loginuid
-          );
+        } else alert("Item '" + Object.values(data[0]) + "' was added!");
       });
   };
 
   // Formik
   const formik = useFormik({
-    onSubmit: values => {
+    onSubmit: (values) => {
       // console.log(values);
       // console.log(expArray[values.ItemId]);
       additem(localStorage.getItem("UniqueID"), values.ItemId);
     },
     validationSchema: yup.object({
-      ItemId: yup
-        .number()
-        .integer()
-        .min(0)
-        .required()
+      ItemId: yup.number().integer().min(0).required(),
     }),
     initialValues: {
       LoginUid: 1936,
-      ItemId: 106120
-    }
+      ItemId: 106120,
+    },
   });
 
   useEffect(() => {
