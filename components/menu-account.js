@@ -17,10 +17,10 @@ const AccountMenu = () => {
 
     axios
       .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut,
+        token: tokenAut
       })
       .then(
-        (response) => {
+        response => {
           console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -31,15 +31,15 @@ const AccountMenu = () => {
 
             axios
               .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                Login: response.data.verifiedJwt.body.name,
+                Login: response.data.verifiedJwt.body.name
               })
               .then(
-                (response) => {
+                response => {
                   console.log(response.data);
 
                   setName(response.data);
                 },
-                (err) => {
+                err => {
                   console.log(err);
                 }
               );
@@ -49,7 +49,7 @@ const AccountMenu = () => {
             SetModalLoggedoutShow(true);
           }
         },
-        (err) => {
+        err => {
           console.log(err);
         }
       );
@@ -60,7 +60,7 @@ const AccountMenu = () => {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <img
           className={styles.menuLogo}
-          alt="yellow sun and white moon"
+          alt="it is an image of yellow sun and white moon sword"
           src="logo.svg"
         />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

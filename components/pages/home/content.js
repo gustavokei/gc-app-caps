@@ -10,12 +10,12 @@ const Content = () => {
           <div className={styles.title}>
             <img
               src="home/home-content-title-separator.svg"
-              alt="Line separator left"
+              alt="image of line separator of left side"
             ></img>
             <h1 className={styles.titleText}>LATEST NEWS</h1>
             <img
               src="home/home-content-title-separator.svg"
-              alt="Line separator right"
+              alt="image of line separator of right side"
             ></img>
           </div>
         </Col>
@@ -24,7 +24,7 @@ const Content = () => {
         <div className="card-columns">
           <Card bg="dark" className={styles.newsCard}>
             <Card.Img
-              alt="orange hair and silver sword."
+              alt="A girl with orange hair and silver sword."
               variant="top"
               src="home/news1.jpg"
             />
@@ -42,7 +42,7 @@ const Content = () => {
           </Card>
           <Card bg="dark" className={styles.newsCard}>
             <Card.Img
-              alt="purple dress and purple hair"
+              alt="A girl with purple dress and purple hair"
               variant="top"
               src="home/news2.jpg"
             />
@@ -60,7 +60,7 @@ const Content = () => {
           </Card>
           <Card bg="dark" className={styles.newsCard}>
             <Card.Img
-              alt="maroon hair and maroon dress"
+              alt="A girl with maroon hair and maroon dress"
               variant="top"
               src="home/news3.jpg"
             />

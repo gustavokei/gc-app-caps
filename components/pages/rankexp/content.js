@@ -10,12 +10,12 @@ const Content = () => {
         <div className={styles.title}>
           <img
             src="home/home-content-title-separator.svg"
-            alt="Line separator left"
+            alt="image of line separator of left side"
           ></img>
           <h1 className={styles.titleText}>TOP 10 EXP</h1>
           <img
             src="home/home-content-title-separator.svg"
-            alt="Line separator right"
+            alt="image of line separator of right side"
           ></img>
         </div>
         <TableRankExp />

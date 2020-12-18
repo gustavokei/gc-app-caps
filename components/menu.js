@@ -76,7 +76,7 @@ const Menu = () => {
         <img
           className={styles.menuLogo}
           src="logo.svg"
-          alt="yellow sun and white moon"
+          alt="it is an image of yellow sun and white moon sword"
         />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

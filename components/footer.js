@@ -15,7 +15,12 @@ const Footer = () => {
       <Row className={styles.customRow}>
         <Col className={styles.customCol}>
           <div className={styles.footerLogo}>
-            <img alt="" src="logo.svg" width="183px" height="30px" />
+            <img
+              alt="it is a picture of red sword"
+              src="logo.svg"
+              width="183px"
+              height="30px"
+            />
           </div>
           <span className={styles.middleText}>
             Grand Chase &copy; is a <br className={styles.break} />
@@ -24,20 +29,24 @@ const Footer = () => {
 
           <div className={styles.social}>
             <a href="www.github.com">
-              <FontAwesomeIcon icon={faDiscord} title="github" alt="github" />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                title="github"
+                alt="it is an image of github website"
+              />
             </a>
             <a href="www.facebook.com">
               <FontAwesomeIcon
                 icon={faFacebookSquare}
                 title="facebook"
-                alt="facebook"
+                alt="it is an image of facebook logo"
               />
             </a>
             <a href="www.instagram.com">
               <FontAwesomeIcon
                 icon={faInstagramSquare}
                 title="instagram"
-                alt="instagram"
+                alt="it is an image of instagram"
               />
             </a>
             <a href="www.youtube.com">
