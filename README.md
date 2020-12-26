@@ -1,5 +1,3 @@
-![app logo](https://i.imgur.com/KNQaZgN.png)
-
 ![app image](https://i.imgur.com/IunhinM.png)
 # A NextJS webapp for the [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps) project
 This app functions as a game portal where users can:
