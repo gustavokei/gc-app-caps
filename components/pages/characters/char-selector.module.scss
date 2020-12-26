@@ -1,0 +1,69 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  height: 100px;
+  width: 100%;
+  color: white;
+  border-top: 4px solid black;
+}
+
+.customContainer,
+.customRow,
+.customCol {
+  height: 100%;
+}
+.customCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev,
+.next {
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.prev {
+  margin-right: 20px;
+}
+
+.next {
+  margin-left: 20px;
+}
+
+.charList {
+  display: flex;
+  width: 796px;
+  overflow: hidden;
+  .charIcon {
+    cursor: pointer;
+    margin-right: 51px;
+    transition: transform 0.3s;
+    filter: grayscale(100%);
+    opacity: 0.5;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .active {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .scroll1 {
+    transform: translateX(0);
+  }
+  .scroll2 {
+    transform: translateX(-846px);
+  }
+
+  .scroll3 {
+    transform: translateX(-1694px);
+  }
+}

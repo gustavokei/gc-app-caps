@@ -1,19 +1,17 @@
 import React from "react";
 import Head from "../components/head";
 import Menu from "../components/menu";
-import Slider from "../components/pages/home/slider";
-import Content from "../components/pages/home/content";
 import Footer from "../components/footer";
 import styles from "./styles.module.scss";
+import DonationContent from "../components/pages/donation/content.js";
 
-const Home = () => {
+const Donation = () => {
   return (
     <div>
-      <Head title="Project Soluna - Home" />
+      <Head title="Project Soluna" />
       <Menu />
-      <Slider />
       <div className={styles.content}>
-        <Content />
+        <DonationContent />
       </div>
       <div className={styles.footer}>
         <Footer />
@@ -22,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Donation;

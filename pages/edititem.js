@@ -1,17 +1,18 @@
 import React from "react";
 import Head from "../components/head";
-import Menu from "../components/menu";
-import Slider from "../components/pages/home/slider";
-import Content from "../components/pages/home/content";
+import Menu from "../components/menu-account";
+import Content from "../components/pages/edititem/content";
 import Footer from "../components/footer";
 import styles from "./styles.module.scss";
 
-const Home = () => {
+const EditItems = () => {
   return (
-    <div>
-      <Head title="Project Soluna - Home" />
+    <div className={styles.rankexpCustom}>
+      <Head title="Project Soluna - Edit Items" />
       <Menu />
-      <Slider />
+      <div>
+        <h1 className={styles.ItemsPageTitle}>Edit Items</h1>
+      </div>
       <div className={styles.content}>
         <Content />
       </div>
@@ -22,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default EditItems;

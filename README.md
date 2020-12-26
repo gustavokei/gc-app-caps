@@ -1,62 +1,47 @@
-# A Next.js starter for the [JAMstack](https://jamstack.org)
-This is a boilerplate for using [Next.js](https://nextjs.org/) as a static site generator.
+![app image](https://i.imgur.com/IunhinM.png)
+# A NextJS webapp for the [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps) project
+This app functions as a game portal where users can:
+* Login & Register
+* Manage their accounts/characters
+* Add/edit/delete items
+* See PVE & PVP rankings (top 10)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-starter-jamstack)
+Developed using ReactJS with Hooks API + function components
 
-## Usage
+The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Soluna) from the Korean game [Grand Chase](https://grandchase.fandom.com/wiki/Grand_Chase_Wiki).
 
-### Getting started
+> It is a two-handed sword that can split into the weapons Sol, the larger, single-handed sword, and Luna, the smaller, almost dagger-like blade, where its name originated from.
 
-To start your project, either:
+Composed as a full-stack solution, this project is also split in two
 
-1. Deploy to Netlify using the button above, or
-2. Clone this repository and run:
+# Live Demo
+[https://grandchase.online/](https://grandchase.online/)
 
-```bash
+Please, register your own account.
+
+# Getting started
+
+* Clone this repository on your local computer
+* Configure .env.local as needed 
+* Run the `npm install` and `npm start`
+
+```
+git clone https://github.com/gustavokei/gc-app-caps.git
+cd gc-app-caps/
+cp sample.env.local .env.local
+// modify .env as needed
 npm install
-```
-
-This will take some time and will install all packages necessary to run the starter.
-
-### Development
-
-While developing your website, use:
-
-```bash
 npm start
+// visit localhost:3000
 ```
 
-Then visit http://localhost:3000/ to preview your new website. The Next.js development server will automatically reload the CSS or refresh the whole page, when stylesheets or content changes.
+Your app should now be running on [localhost:3000](http://localhost:3000/)
 
-### Static build
+## .env.local file configuration
 
-To build a static version of the website inside the `/dist` folder, run:
+* `NEXT_PUBLIC_API` = [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps) api url
+* `NEXT_PUBLIC_PAYPAL_CLIENT_ID` = Paypal client id
 
-```bash
-npm run build
-```
+## Documentation
 
-See [package.json](package.json) for all tasks.
-
-## Basic Concepts
-
-You can read more about building sites and apps with Next.js in their documentation here:
-
-https://nextjs.org/docs
-
-## Doing dynamic things
-
-A few resources for doing anything you can imagine with a 100% static site/app on the JAMstack
-using Next.js. If you would like to add more resources please open a pull request!
-
-- [Using Next.js as a Static Site Generator for Netlify](https://scotch.io/@sw-yx/using-nextjs-as-a-static-site-generator-for-netlify) - [Shawn Wang](https://twitter.com/swyx)
-- [Serverless Next.js 9 on Netlify Functions](https://community.netlify.com/t/serverless-next-js-9-on-netlify-functions/1956) - [Shawn Wang](https://twitter.com/swyx)
-
-## Deploying to Netlify
-
-The deploy to Netlify button above will create a new site and repo in one click. If you've created your repo manually, you can deploy to Netlify as follows:
-
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now Netlify will build and deploy your site whenever you push to git.
+For more information about our project, [visit our wiki.](https://github.com/gustavokei/gc-app-caps/wiki)

@@ -1,0 +1,36 @@
+.custModal{
+    background-color: #373A3C !important;
+    color: #fff !important;
+}
+
+.custModalClose{
+    span{
+        color: white;
+    }
+
+}
+.custModalLink{
+    padding: 15px 0 10px;
+}
+
+.custModalFooter{
+    justify-content: left !important;
+}
+
+
+  .formValid {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #4caf50;
+
+  }
+  .formInvalid {
+    font-size: 12px;
+    margin-top: 3px;
+    color: #f44336;
+  }
+
+  .haserror {
+    border: 1px solid #f44336;
+  }
+

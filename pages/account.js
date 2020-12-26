@@ -1,19 +1,17 @@
 import React from "react";
 import Head from "../components/head";
-import Menu from "../components/menu";
-import Slider from "../components/pages/home/slider";
-import Content from "../components/pages/home/content";
+import AccountMenu from "../components/menu-account";
+import AccountContent from "../components/pages/account/content.js";
 import Footer from "../components/footer";
 import styles from "./styles.module.scss";
 
-const Home = () => {
+const Account = () => {
   return (
     <div>
-      <Head title="Project Soluna - Home" />
-      <Menu />
-      <Slider />
+      <Head title="Project Soluna" />
+      <AccountMenu />
       <div className={styles.content}>
-        <Content />
+        <AccountContent />
       </div>
       <div className={styles.footer}>
         <Footer />
@@ -22,4 +20,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Account;
