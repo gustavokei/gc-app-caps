@@ -1,4 +1,3 @@
-![app image](https://i.imgur.com/IunhinM.png)
 # A NextJS webapp for the [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps) project
 This app functions as a game portal where users can:
 * Login & Register
@@ -13,6 +12,9 @@ The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Solun
 > It is a two-handed sword that can split into the weapons Sol, the larger, single-handed sword, and Luna, the smaller, almost dagger-like blade, where its name originated from.
 
 Composed as a full-stack solution, this project is also split in two
+
+# Preview
+![app image](https://i.imgur.com/IunhinM.png)
 
 # Live Demo
 [https://grandchase.online/](https://grandchase.online/)
