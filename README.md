@@ -16,11 +16,6 @@ Composed as a full-stack solution, this project is also split in two
 # Preview
 ![app image](https://i.imgur.com/IunhinM.png)
 
-# Live Demo
-[https://grandchase.online/](https://grandchase.online/)
-
-Please, register your own account.
-
 # Getting started
 
 * Clone this repository on your local computer
