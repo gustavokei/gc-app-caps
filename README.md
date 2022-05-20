@@ -1,5 +1,5 @@
-# A NextJS CRUD Game Portal
-This webapp functions as a game portal where users can:
+# A NextJS app for a CRUD Game Portal
+This app functions as a game portal where users can:
 * Login & Register
 * Manage their accounts/characters
 * Add/edit/delete items
