@@ -1,5 +1,5 @@
-# A NextJS webapp for the [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps) project
-This app functions as a game portal where users can:
+# A NextJS CRUD Game Portal
+This webapp functions as a game portal where users can:
 * Login & Register
 * Manage their accounts/characters
 * Add/edit/delete items
@@ -7,11 +7,11 @@ This app functions as a game portal where users can:
 
 Developed using ReactJS with Hooks API + function components
 
-The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Soluna) from the Korean game [Grand Chase](https://grandchase.fandom.com/wiki/Grand_Chase_Wiki).
+The name "Soluna" refers to an [weapon](https://grandchase.fandom.com/wiki/Soluna) from the Korean game [Grand Chase (for PC)](https://grandchase.fandom.com/wiki/Grand_Chase_Wiki).
 
 > It is a two-handed sword that can split into the weapons Sol, the larger, single-handed sword, and Luna, the smaller, almost dagger-like blade, where its name originated from.
 
-Composed as a full-stack solution, this project is also split in two
+Composed as a full-stack solution, this project is also split in two (back end part is [gc-dportal-caps](https://github.com/gustavokei/gc-dportal-caps))
 
 # Preview
 ![app image](https://i.imgur.com/IunhinM.png)
