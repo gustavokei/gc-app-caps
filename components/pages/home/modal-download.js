@@ -12,7 +12,10 @@ const ModalDownload = (props) => {
         <Modal.Body>
           <h6>Please, download the installer and follow the instructions:</h6>
           <h6 className={styles.custModalLink}>
-            <a href="https://cdn.grandchase.online/file/gc-client/Grand-Chase-Sandbox-Web-Setup-0.0.191.zip" target="_blank">
+            <a
+              href="https://cdn.grandchase.online/file/gc-client/Grand-Chase-Sandbox-Web-Setup-0.0.191.7z"
+              target="_blank"
+            >
               Installer
             </a>
           </h6>
