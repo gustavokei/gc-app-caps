@@ -21,11 +21,11 @@ const Menu = () => {
     let tokenAut = localStorage.getItem("token");
 
     axios
-      .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut
+      .post("https://gc-dportal-caps.herokuapp.com/" + "verify", {
+        token: tokenAut,
       })
       .then(
-        response => {
+        (response) => {
           //    console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -40,16 +40,16 @@ const Menu = () => {
             );
             if (email === "") {
               axios
-                .post(process.env.NEXT_PUBLIC_API + "getemail", {
-                  Login: response.data.verifiedJwt.body.name
+                .post("https://gc-dportal-caps.herokuapp.com/" + "getemail", {
+                  Login: response.data.verifiedJwt.body.name,
                 })
                 .then(
-                  response => {
+                  (response) => {
                     //     console.log(response.data);
                     localStorage.setItem("userEmail", response.data);
                     setEmail(response.data);
                   },
-                  err => {
+                  (err) => {
                     console.log(err);
                   }
                 );
@@ -64,7 +64,7 @@ const Menu = () => {
             console.log(auth);
           }
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );

@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Content = () => {
   // Get Character data from API
-  const url = process.env.NEXT_PUBLIC_API + "server";
+  const url = "https://gc-dportal-caps.herokuapp.com/" + "server";
 
   const [data, setData] = useState([]);
 
@@ -16,15 +16,25 @@ const Content = () => {
   const serverValue = () => {
     return data.map((Server) => {
       return (
-        <Card key={Server.ServerName} border="secondary" style={{ width: "18rem" }}>
+        <Card
+          key={Server.ServerName}
+          border="secondary"
+          style={{ width: "18rem" }}
+        >
           <Card.Header>{Server.ServerName}</Card.Header>
           <Card.Body>
             <Card.Text>
-              IP: {Server.ServerIP} <br/>
-              Port: {Server.ServerPort} <br/> <br/> <br/>
+              IP: {Server.ServerIP} <br />
+              Port: {Server.ServerPort} <br /> <br /> <br />
               Capacity:
             </Card.Text>
-            <ProgressBar className={styles.customBar} now={Server.UserNum} min={0} max={100} label={`${Server.UserNum}%`} />
+            <ProgressBar
+              className={styles.customBar}
+              now={Server.UserNum}
+              min={0}
+              max={100}
+              label={`${Server.UserNum}%`}
+            />
           </Card.Body>
         </Card>
       );

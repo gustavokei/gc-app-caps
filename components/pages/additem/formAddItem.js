@@ -14,7 +14,11 @@ const FormAddItem = () => {
   // Update Character data from API
   let additem = (loginuid, itemid) => {
     return fetch(
-      process.env.NEXT_PUBLIC_API + "additem/" + loginuid + "/" + itemid,
+      "https://gc-dportal-caps.herokuapp.com/" +
+        "additem/" +
+        loginuid +
+        "/" +
+        itemid,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },

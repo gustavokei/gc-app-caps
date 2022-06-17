@@ -14,13 +14,15 @@ const FormEditCharacter = () => {
 
   // Get Character data from API
   const url =
-    process.env.NEXT_PUBLIC_API + "rank/exp/" + chartypeData[state.char].ctype;
+    "https://gc-dportal-caps.herokuapp.com/" +
+    "rank/exp/" +
+    chartypeData[state.char].ctype;
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then(json => setData(json.data))
-  }, [state.char])
+    axios.get(url).then((json) => setData(json.data));
+  }, [state.char]);
 
   const renderTable = () => {
     return data.map((Character) => {

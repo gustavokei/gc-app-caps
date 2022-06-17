@@ -19,11 +19,11 @@ export default function ReactPayPal() {
     let tokenAut = localStorage.getItem("token");
     let capUser = userName.charAt(0).toUpperCase() + userName.slice(1);
     axios
-      .post(process.env.NEXT_PUBLIC_API + "verify", {
-        token: tokenAut
+      .post("https://gc-dportal-caps.herokuapp.com/" + "verify", {
+        token: tokenAut,
       })
       .then(
-        response => {
+        (response) => {
           console.log(response.data.message);
 
           if (response.data.message === "Successful Login...") {
@@ -32,7 +32,7 @@ export default function ReactPayPal() {
             //    console.log(response.data.verifiedJwt.body.name);
             //setName(response.data.verifiedJwt.body.name);
 
-            new Promise(resolve => {
+            new Promise((resolve) => {
               if (paypalScript) {
                 resolve(true);
               } else {
@@ -47,7 +47,7 @@ export default function ReactPayPal() {
                   "&currency=BRL";
                 target.appendChild(tag);
                 tag.addEventListener("load", resolve, {
-                  once: true
+                  once: true,
                 });
               }
             }).then(() => {
@@ -62,10 +62,10 @@ export default function ReactPayPal() {
                           description: "Your description",
                           amount: {
                             currency_code: "BRL",
-                            value: 10.0
-                          }
-                        }
-                      ]
+                            value: 10.0,
+                          },
+                        },
+                      ],
                     });
                   },
                   onApprove: async (data, actions) => {
@@ -73,10 +73,10 @@ export default function ReactPayPal() {
                     setPaid(true);
                     console.log(order);
                   },
-                  onError: err => {
+                  onError: (err) => {
                     //   setError(err),
                     console.error(err);
-                  }
+                  },
                 })
                 .render(paypalRef.current);
             });
@@ -86,7 +86,7 @@ export default function ReactPayPal() {
             SetModalLoggedoutShow(true);
           }
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );

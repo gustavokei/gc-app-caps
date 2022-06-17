@@ -14,7 +14,7 @@ const ValidationSchema = Yup.object().shape({
   pass: Yup.string()
     .min(3, "Too Short!")
     .max(255, "Too Long!")
-    .required("Required")
+    .required("Required"),
 });
 
 function ModalLogin(props) {
@@ -26,23 +26,23 @@ function ModalLogin(props) {
         log: "",
         pass: "",
         token: "",
-        auth: ""
+        auth: "",
       }}
       validationSchema={ValidationSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmitting(true);
 
         setTimeout(() => {
-          fetch(process.env.NEXT_PUBLIC_API + "auth", {
+          fetch("https://gc-dportal-caps.herokuapp.com/" + "auth", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               Login: values.log,
-              passwd: values.pass
-            })
+              passwd: values.pass,
+            }),
           })
-            .then(response => response.json())
-            .then(result => {
+            .then((response) => response.json())
+            .then((result) => {
               if (result.token) {
                 console.log(result);
                 localStorage.setItem("token", result.token);
@@ -75,7 +75,7 @@ function ModalLogin(props) {
         handleChange,
         handleBlur,
         handleSubmit,
-        isSubmitting
+        isSubmitting,
       }) => (
         <Modal {...props} size="md">
           <div className={styles.custModal}>

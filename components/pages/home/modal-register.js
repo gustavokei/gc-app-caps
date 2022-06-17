@@ -6,7 +6,7 @@ import Router from "next/router";
 function ModalRegister(props) {
   // const [validated, setValidated] = useState(false);
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
     const form = event.currentTarget;
@@ -15,17 +15,17 @@ function ModalRegister(props) {
   };
 
   let register = async (log, emal, pass) => {
-    fetch(process.env.NEXT_PUBLIC_API + "register", {
+    fetch("https://gc-dportal-caps.herokuapp.com/" + "register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         Login: log,
         passwd: pass,
-        email: emal
-      })
+        email: emal,
+      }),
     })
-      .then(response => response.status)
-      .then(result => {
+      .then((response) => response.status)
+      .then((result) => {
         if (result === 400) {
           alert("User Already Registered !");
         } else {

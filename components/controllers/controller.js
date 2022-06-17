@@ -1,5 +1,5 @@
 let checkAuth = async (login) => {
-  return fetch(process.env.NEXT_PUBLIC_API_URL + "one/" + login, {
+  return fetch("https://gc-dportal-caps.herokuapp.com/"_URL + "one/" + login, {
     method: "get",
   })
     .then((response) => response.json())
