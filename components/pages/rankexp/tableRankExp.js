@@ -14,7 +14,7 @@ const FormEditCharacter = () => {
 
   // Get Character data from API
   const url =
-    "https://gc-dportal-caps.herokuapp.com/" +
+    "https://gc-dportal-caps.herokuapp.com/api/" +
     "rank/exp/" +
     chartypeData[state.char].ctype;
 

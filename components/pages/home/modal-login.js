@@ -33,7 +33,7 @@ function ModalLogin(props) {
         setSubmitting(true);
 
         setTimeout(() => {
-          fetch("https://gc-dportal-caps.herokuapp.com/" + "auth", {
+          fetch("https://gc-dportal-caps.herokuapp.com/api/" + "auth", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

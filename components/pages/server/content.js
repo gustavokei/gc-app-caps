@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Content = () => {
   // Get Character data from API
-  const url = "https://gc-dportal-caps.herokuapp.com/" + "server";
+  const url = "https://gc-dportal-caps.herokuapp.com/api/" + "server";
 
   const [data, setData] = useState([]);
 

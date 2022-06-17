@@ -9,10 +9,10 @@ const FormEditCharacter = () => {
   const [LoginUid, setLoginUid] = useState("");
 
   // Get Character data from API
-  const getitemurl = "https://gc-dportal-caps.herokuapp.com/" + "getitem/";
-  const delitemurl = "https://gc-dportal-caps.herokuapp.com/" + "delitem/";
+  const getitemurl = "https://gc-dportal-caps.herokuapp.com/api/" + "getitem/";
+  const delitemurl = "https://gc-dportal-caps.herokuapp.com/api/" + "delitem/";
   const restoreitemurl =
-    "https://gc-dportal-caps.herokuapp.com/" + "restoreitem/";
+    "https://gc-dportal-caps.herokuapp.com/api/" + "restoreitem/";
 
   const [data, setData] = useState([]);
   const [update, toggleUpdate] = useState(false);

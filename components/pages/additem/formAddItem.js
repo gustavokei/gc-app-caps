@@ -14,7 +14,7 @@ const FormAddItem = () => {
   // Update Character data from API
   let additem = (loginuid, itemid) => {
     return fetch(
-      "https://gc-dportal-caps.herokuapp.com/" +
+      "https://gc-dportal-caps.herokuapp.com/api/" +
         "additem/" +
         loginuid +
         "/" +

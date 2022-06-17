@@ -15,7 +15,7 @@ function ModalRegister(props) {
   };
 
   let register = async (log, emal, pass) => {
-    fetch("https://gc-dportal-caps.herokuapp.com/" + "register", {
+    fetch("https://gc-dportal-caps.herokuapp.com/api/" + "register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

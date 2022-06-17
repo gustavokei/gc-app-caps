@@ -16,7 +16,7 @@ const AccountMenu = () => {
     let tokenAut = localStorage.getItem("token");
 
     axios
-      .post("https://gc-dportal-caps.herokuapp.com/" + "verify", {
+      .post("https://gc-dportal-caps.herokuapp.com/api/" + "verify", {
         token: tokenAut,
       })
       .then(
@@ -30,7 +30,7 @@ const AccountMenu = () => {
             //setName(response.data.verifiedJwt.body.name);
 
             axios
-              .post("https://gc-dportal-caps.herokuapp.com/" + "getemail", {
+              .post("https://gc-dportal-caps.herokuapp.com/api/" + "getemail", {
                 Login: response.data.verifiedJwt.body.name,
               })
               .then(
