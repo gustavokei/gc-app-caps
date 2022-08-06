@@ -10,10 +10,10 @@ const ModalDownload = (props) => {
           <Modal.Title>Download</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h6>Please, download the installer and follow the instructions:</h6>
+          <h6>Download the ".exe" file from this link and follow the instructions:</h6>
           <h6 className={styles.custModalLink}>
             <a
-              href="https://cdn.grandchase.online/file/gc-client/Grand-Chase-Sandbox-Web-Setup-0.0.191.7z"
+              href="https://github.com/gustavokei/electron-game-updater/releases/latest"
               target="_blank"
             >
               Installer
