@@ -14,7 +14,7 @@ const TableWin = () => {
 
   // Get Character data from API
   const url =
-    "https://gc-dportal-caps.herokuapp.com/api/" +
+    "https://dportal.onrender.com/api/" +
     "rank/win/" +
     chartypeData[state.char].ctype;
 

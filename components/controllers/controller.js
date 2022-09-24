@@ -1,5 +1,5 @@
 let checkAuth = async (login) => {
-  return fetch("https://gc-dportal-caps.herokuapp.com/api/"_URL + "one/" + login, {
+  return fetch("https://dportal.onrender.com/api/"_URL + "one/" + login, {
     method: "get",
   })
     .then((response) => response.json())

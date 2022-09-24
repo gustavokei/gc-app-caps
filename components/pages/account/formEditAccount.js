@@ -17,7 +17,7 @@ const FormEditAccount = () => {
 
   // Get User Account data from API
   let getAccount = (login) => {
-    return fetch("https://gc-dportal-caps.herokuapp.com/api/" + "account", {
+    return fetch("https://dportal.onrender.com/api/" + "account", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -32,7 +32,7 @@ const FormEditAccount = () => {
 
   // Update User Account data from API
   let updateAccount = (login, emailadd, pass, gamepoint, cash, virtualcash) => {
-    return fetch("https://gc-dportal-caps.herokuapp.com/api/" + "upaccount", {
+    return fetch("https://dportal.onrender.com/api/" + "upaccount", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

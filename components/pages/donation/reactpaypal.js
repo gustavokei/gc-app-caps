@@ -19,7 +19,7 @@ export default function ReactPayPal() {
     let tokenAut = localStorage.getItem("token");
     let capUser = userName.charAt(0).toUpperCase() + userName.slice(1);
     axios
-      .post("https://gc-dportal-caps.herokuapp.com/api/" + "verify", {
+      .post("https://dportal.onrender.com/api/" + "verify", {
         token: tokenAut,
       })
       .then(
