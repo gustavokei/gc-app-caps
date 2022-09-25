@@ -25,7 +25,7 @@ const FormEditCharacter = () => {
 
   // Get Character data from API
   let getChar = (login, char) => {
-    return fetch("https://dportal.onrender.com/api/" + "getchar", {
+    return fetch("https://api.devgames.app/api/" + "getchar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -41,7 +41,7 @@ const FormEditCharacter = () => {
 
   // Update Character data from API
   let updateChar = (login, char, lvl, exp, promo, win, lose) => {
-    return fetch("https://dportal.onrender.com/api/" + "upchar", {
+    return fetch("https://api.devgames.app/api/" + "upchar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

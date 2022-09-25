@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Content = () => {
   // Get Character data from API
-  const url = "https://dportal.onrender.com/api/" + "server";
+  const url = "https://api.devgames.app/api/" + "server";
 
   const [data, setData] = useState([]);
 

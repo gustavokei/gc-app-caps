@@ -9,9 +9,9 @@ const FormEditCharacter = () => {
   const [LoginUid, setLoginUid] = useState("");
 
   // Get Character data from API
-  const getitemurl = "https://dportal.onrender.com/api/" + "getitem/";
-  const delitemurl = "https://dportal.onrender.com/api/" + "delitem/";
-  const restoreitemurl = "https://dportal.onrender.com/api/" + "restoreitem/";
+  const getitemurl = "https://api.devgames.app/api/" + "getitem/";
+  const delitemurl = "https://api.devgames.app/api/" + "delitem/";
+  const restoreitemurl = "https://api.devgames.app/api/" + "restoreitem/";
 
   const [data, setData] = useState([]);
   const [update, toggleUpdate] = useState(false);

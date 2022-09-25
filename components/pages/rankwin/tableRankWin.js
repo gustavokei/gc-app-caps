@@ -14,7 +14,7 @@ const TableWin = () => {
 
   // Get Character data from API
   const url =
-    "https://dportal.onrender.com/api/" +
+    "https://api.devgames.app/api/" +
     "rank/win/" +
     chartypeData[state.char].ctype;
 

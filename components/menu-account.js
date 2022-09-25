@@ -16,7 +16,7 @@ const AccountMenu = () => {
     let tokenAut = localStorage.getItem("token");
 
     axios
-      .post("https://dportal.onrender.com/api/" + "verify", {
+      .post("https://api.devgames.app/api/" + "verify", {
         token: tokenAut,
       })
       .then(
@@ -30,7 +30,7 @@ const AccountMenu = () => {
             //setName(response.data.verifiedJwt.body.name);
 
             axios
-              .post("https://dportal.onrender.com/api/" + "getemail", {
+              .post("https://api.devgames.app/api/" + "getemail", {
                 Login: response.data.verifiedJwt.body.name,
               })
               .then(

@@ -14,11 +14,7 @@ const FormAddItem = () => {
   // Update Character data from API
   let additem = (loginuid, itemid) => {
     return fetch(
-      "https://dportal.onrender.com/api/" +
-        "additem/" +
-        loginuid +
-        "/" +
-        itemid,
+      "https://api.devgames.app/api/" + "additem/" + loginuid + "/" + itemid,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },

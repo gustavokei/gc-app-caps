@@ -33,7 +33,7 @@ function ModalLogin(props) {
         setSubmitting(true);
 
         setTimeout(() => {
-          fetch("https://dportal.onrender.com/api/" + "auth", {
+          fetch("https://api.devgames.app/api/" + "auth", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
